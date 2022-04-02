@@ -6,8 +6,9 @@ enum Tower {
 	RESOURCE_EXTRACTOR,
 }
 
-var _ENEMY_DATA = {
+var _TOWER_DATA = {
 	Tower.DEFAULT: {
+		"name": "N/A",
 		"unlock_year": 0,
 		"hp": 100,
 		"cost": 0,

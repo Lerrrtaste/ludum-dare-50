@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/hpbar/hpbar_sheet.png" type="Texture" id=1]
+[ext_resource path="res://ui/hpbar/hp_bar.gd" type="Script" id=2]
+
+[node name="HpBar" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Bar" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 8 )

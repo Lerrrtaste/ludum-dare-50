@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planet-worse.png-c6bfe0b775ea4b41a5a88d439b7ab0a8.stex"
+path="res://.import/planet-worse.png-bd53a817f4c1c99f908a313e8c6c0dff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/objects/planet-worse.png"
-dest_files=[ "res://.import/planet-worse.png-c6bfe0b775ea4b41a5a88d439b7ab0a8.stex" ]
+source_file="res://scenes/objects/planet/planet-worse.png"
+dest_files=[ "res://.import/planet-worse.png-bd53a817f4c1c99f908a313e8c6c0dff.stex" ]
 
 [params]
 

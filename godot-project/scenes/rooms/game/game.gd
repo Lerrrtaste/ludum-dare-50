@@ -17,6 +17,7 @@ func perform_spawn(event):
 	Notifier.notify_debug("spawned %s" %enemy_id)
 	#todo -- insert code wich actually spawns the objects here
 	pass
+<<<<<<< HEAD
 	
 func display_age_progress(wave, timestamp):
 	#todo - implement age/level progress bar 
@@ -44,3 +45,6 @@ func start_wave(wave_number):
 	if wave_number in GameData._wave_data:
 		current_wave_data = GameData.get_wave_dict(wave_number)
 	events = current_wave_data.enemies
+=======
+
+>>>>>>> aaaad2f (Started Tower Base; Added HP Bar; Fixed GameData)

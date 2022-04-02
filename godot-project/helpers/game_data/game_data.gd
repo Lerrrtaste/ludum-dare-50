@@ -1,20 +1,18 @@
 extends Node
 
-onready var EnemyData = load("res://helpers/game_data/enemy_data.gd").new()
+var EnemyScene = load("res://helpers/game_data/enemy_data.gd")
 var _enemy_data
 
-onready var TowerData = load("res://helpers/game_data/tower_data.gd").new()
+var TowerScene = load("res://helpers/game_data/tower_data.gd")
 var _tower_data
 
-onready var WaveData = load("res://helpers/game_data/wave_data.gd").new()
+var WaveScene = load("res://helpers/game_data/wave_data.gd")
 var _wave_data
 
-
 func _ready():
-	_enemy_data = EnemyData._ENEMY_DATA
-	_tower_data = TowerData._TOWER_DATA
-	_wave_data = WaveData._WAVE_DATA
-
+	_enemy_data = EnemyScene.new()._ENEMY_DATA
+	_tower_data = TowerScene.new()._TOWER_DATA
+	_wave_data = WaveScene.new()._WAVE_DATA
 
 #### Getters
 

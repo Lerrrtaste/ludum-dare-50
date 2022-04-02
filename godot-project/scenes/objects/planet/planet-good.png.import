@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planet-good.png-6164c0e83a44a317549d9f714ffd7481.stex"
+path="res://.import/planet-good.png-4cc333d4164600a964cf8f75edbe2df5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/objects/planet-good.png"
-dest_files=[ "res://.import/planet-good.png-6164c0e83a44a317549d9f714ffd7481.stex" ]
+source_file="res://scenes/objects/planet/planet-good.png"
+dest_files=[ "res://.import/planet-good.png-4cc333d4164600a964cf8f75edbe2df5.stex" ]
 
 [params]
 
