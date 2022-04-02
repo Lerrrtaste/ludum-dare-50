@@ -40,7 +40,7 @@ func notify_error(title, message = ""):
 	_spawn_notification(TexturePanelRed, title, message, 5.0)
 
 
-func notify_editor(title, message = ""):
+func notify_debug(title, message = ""):
 	_spawn_notification(TexturePanelBlue, title, message, 4.0)
 
 

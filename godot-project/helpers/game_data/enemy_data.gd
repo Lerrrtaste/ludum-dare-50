@@ -1,4 +1,4 @@
-extends Script
+extends GDScript
 
 enum Enemies {
 	DEFAULT = -1,
@@ -16,7 +16,7 @@ var _ENEMY_DATA = {
 		"start_year": 0,
 		"damage_type": DamageType.NONE,
 		"damage_amount": 0,
-		"projectile": null, #for shooting enemeies
+		"projectile": null, #for shooting enemies
 	},
 	Enemies.METEOR1: {
 		"damage_type": DamageType.IMPACT,
@@ -26,6 +26,5 @@ var _ENEMY_DATA = {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 50,
 	},
-	Enemies.METEOR2
 }
 
