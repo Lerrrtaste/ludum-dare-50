@@ -11,13 +11,25 @@ config_version=4
 [application]
 
 config/name="LudumDare50"
-run/main_scene="res://scenes/objects/Planet.tscn"
+run/main_scene="res://scenes/rooms/game/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Notifier="*res://helpers/notifier/Notifier.tscn"
 GameData="*res://helpers/game_data/game_data.gd"
+IntegerResolutionHandler="*res://addons/integer_resolution_handler/integer_resolution_handler.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/integer_resolution_handler/plugin.cfg" )
 
 [importer_defaults]
 

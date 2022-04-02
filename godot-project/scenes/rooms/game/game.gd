@@ -2,10 +2,14 @@ extends CanvasLayer
 
 signal wave_changed
 
+var money = 0
+
 var wave = 1  # aka year
 var wave_progress = 0  #progress 0.0 - 1.0
 var current_wave_data 
 var events
+
+onready var planet = $Planet
 
 func _ready():
 	start_wave(wave)
@@ -73,7 +77,16 @@ func start_wave(wave_number):
 		current_wave_data = GameData.get_wave_dict(wave_number)
 	events = current_wave_data["enemies"]
 
+<<<<<<< HEAD
 func _on_game_over():
 	#show game_over room
 	get_tree().change_scene("res://scenes/rooms/game_over/GameOver.tscn")
 	pass
+=======
+
+
+#### Shop
+
+func _on_BtnShop_pressed():
+	$ContainerShop.visible = true
+>>>>>>> fb3be78 (Worked on Shop, Added Game UI; Changed GameData; Added HP Bar; Added Placeholder Tower,)

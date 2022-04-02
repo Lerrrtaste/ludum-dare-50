@@ -11,8 +11,8 @@ func _ready():
 
 func _process(delta: float):
 	hp -= 1
-	print(hp / tower_data.hp)
-	$HpBar.value = hp / tower_data.hp
+	print($HpBar.value)
+	$HpBar.value = (hp / tower_data.hp) * 100
 
 func recieve_damage(damage:int):
 	Notifier.notify_debug("Tower Damaged")

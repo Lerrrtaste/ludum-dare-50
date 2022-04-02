@@ -9,6 +9,8 @@ enum Tower {
 var _TOWER_DATA = {
 	Tower.DEFAULT: {
 		"name": "N/A",
+		"icon_path": null,
+		"scene_path": null,
 		"unlock_year": 0,
 		"hp": 100,
 		"cost": 0,
