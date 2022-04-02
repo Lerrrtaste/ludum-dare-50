@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Notifier="*res://helpers/notifier/Notifier.tscn"
+GameData="*res://helpers/game_data/game_data.gd"
 
 [physics]
 
