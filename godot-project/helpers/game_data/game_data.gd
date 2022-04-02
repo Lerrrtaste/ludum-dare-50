@@ -15,14 +15,13 @@ func _ready():
 	_tower_data = TowerData._TOWER_DATA
 	_wave_data = WaveData._WAVE_DATA
 
-#### Getters
 
+#### Getters
 
 # Enemy Data
 
 func get_enemy_dict(enemy_id) -> Dictionary:
 	return _get_dict(_enemy_data, enemy_id)
-
 
 func get_enemy_property(enemy_id, property_name):
 	return _get_property(_enemy_data, enemy_id, property_name)
@@ -33,7 +32,6 @@ func get_enemy_property(enemy_id, property_name):
 func get_tower_dict(tower_id) -> Dictionary:
 	return _get_dict(_tower_data, tower_id)
 
-
 func get_tower_property(tower_id, property_name):
 	return _get_property(_tower_data, tower_id, property_name)
 
@@ -42,7 +40,6 @@ func get_tower_property(tower_id, property_name):
 
 func get_wave_dict(wave_number) -> Dictionary:
 	return _get_dict(_wave_data, wave_number)
-
 
 func get_wave_property(wave_number, property_name):
 	return _get_property(_wave_data, wave_number, property_name)
@@ -55,7 +52,6 @@ func _get_dict(data_dict, key) -> Dictionary:
 		return data_dict[-1]
 
 	return data_dict[key]
-
 
 func _get_property(data_dict, key, property):
 	if not key in data_dict:

@@ -1,31 +1,30 @@
 extends GDScript
 
-enum Enemies {
+enum Tower {
 	DEFAULT = -1,
-	METEOR1,
-	METEOR2,
-}
-enum DamageType {
-	NONE = -1,
-	IMPACT,
-	PROJECTILE,
+	RESOURCE_STORAGE,
+	RESOURCE_EXTRACTOR,
 }
 
 var _ENEMY_DATA = {
-	Enemies.DEFAULT: {
-		"start_year": 0,
-		"damage_type": DamageType.NONE,
-		"damage_amount": 0,
-		"projectile": null, #for shooting enemeies
+	Tower.DEFAULT: {
+		"unlock_year": 0,
+		"hp": 100,
+		"cost": 0,
+		"resource_generation": 0,  #adds x resources per second
+		"resource_storage_capacity": 10,  #can store x resources max
 	},
-	Enemies.METEOR1: {
-		"damage_type": DamageType.IMPACT,
-		"damage_amount": 25,
+	Tower.RESOURCE_STORAGE: {
+		"unlock_year": 0,
+		"hp": 300,
+		"cost": 0,
+		"resource_storage_capacity": 1000,
 	},
-	Enemies.METEOR2: {
-		"damage_type": DamageType.IMPACT,
-		"damage_amount": 50,
+	Tower.RESOURCE_EXTRACTOR: {
+		"unlock_year": 0,
+		"hp": 50,
+		"cost": 0,
+		"resource_generation": 10,
+		"resource_storage_capacity": 100,
 	},
-	Enemies.METEOR2
 }
-
