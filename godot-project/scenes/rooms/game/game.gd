@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal wave_changed
 
-var wave = 0  # aka year
+var wave = 1  # aka year
 var wave_progress = 0  #progress 0.0 - 1.0
 var current_wave_data 
 var events
@@ -27,6 +27,7 @@ func display_age_progress(wave, timestamp):
 	
 func _process(delta):
 	wave_progress += delta/current_wave_data["duration"]
+	#print(wave_progress)
 	if wave_progress >= 1.0 :
 		wave = wave + 1
 		start_wave(wave)
@@ -35,7 +36,8 @@ func _process(delta):
 	display_age_progress(wave,wave_progress)
 	if ! events.empty() :
 		var timestamp=events[0]["timestamp"]
-		if timestamp>wave_progress :
+		if timestamp<wave_progress :
+			#print(timestamp,wave_progress)
 			perform_spawn(events.pop_front())
 			
 	
@@ -44,4 +46,4 @@ func _process(delta):
 func start_wave(wave_number):
 	if wave_number in GameData._wave_data:
 		current_wave_data = GameData.get_wave_dict(wave_number)
-	events = current_wave_data.enemies
+	events = current_wave_data["enemies"]

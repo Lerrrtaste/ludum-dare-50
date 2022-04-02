@@ -1,7 +1,7 @@
 extends GDScript
 
 
-var Enemies = GameData.EnemyData.Enemies
+var Enemies = load("res://helpers/game_data/enemy_data.gd").new().Enemies
 
 var _WAVE_DATA = {
 	-1: { # default values
