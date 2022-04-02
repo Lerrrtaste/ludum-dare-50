@@ -1,17 +1,14 @@
 extends GDScript
 
-<<<<<<< HEAD
+
 var Enemies = GameData.EnemyData.Enemies
-=======
-var Enemies = load("res://helpers/game_data/enemy_data.gd").new().Enemies
->>>>>>> aaaad2f (Started Tower Base; Added HP Bar; Fixed GameData)
 
 var _WAVE_DATA = {
 	-1: { # default values
 		"duration": 1, # seconds
 		"enemies": {
-			0.0: [Enemies.NONE],
-<<<<<<< HEAD
+
+			0.0: [Enemies.DEFAULT],
 		},
 	},
 
