@@ -14,10 +14,34 @@ func _ready():
 func perform_spawn(event):
 	var enemy_id=event["id"]
 	var enemy_count=event["count"]
-	Notifier.notify_debug("spawned %s" %enemy_id)
-	#todo -- insert code wich actually spawns the objects here
+	print(enemy_id," spawned")
+	var enemy_scene_path=GameData.get_enemy_property(enemy_id, "scene_path")
+	var EnemyScene =load(enemy_scene_path)
+	for i in range(enemy_count) :
+		var enemy=EnemyScene.instance()
+		add_child(enemy)
+		enemy.position=rand_pos_to_spwan()
 	pass
-
+	
+func rand_pos_to_spwan()->Vector2:
+	var side_x = randi() %2 # create bolean to decide on wich side to spawn
+	var side_y = randi() %2
+	var value_x=randi()%100 #randon number for the distance from the window border
+	var value_y=randi()%100
+	var x
+	var y
+	#calculate x coordinate
+	if side_x >= 0:
+		x=value_x*-1
+	else:
+		x=value_x+get_viewport().size.x
+	#calculate y coordinate
+	if side_y >= 0:
+		x=value_y*-1
+	else:
+		y=value_y+get_viewport().size.y
+	var vec := Vector2(x,y)
+	return vec
 	
 func display_age_progress(wave, timestamp):
 	#todo - implement age/level progress bar 
