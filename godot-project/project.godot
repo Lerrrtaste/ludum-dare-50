@@ -11,8 +11,16 @@ config_version=4
 [application]
 
 config/name="LudumDare50"
+<<<<<<< HEAD
 run/main_scene="res://scenes/objects/Planet.tscn"
+=======
+run/main_scene="res://scenes/rooms/game/Game.tscn"
+>>>>>>> cbd6525ee555a3c5f31647c275a17ca25833f947
 config/icon="res://icon.png"
+
+[autoload]
+
+Notifier="*res://helpers/notifier/Notifier.tscn"
 
 [physics]
 
