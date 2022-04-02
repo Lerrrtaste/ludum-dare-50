@@ -10,6 +10,7 @@ var events
 func _ready():
 	start_wave(wave)
 	emit_signal("wave_changed", wave) # emits a signal that the first wave/age/lavel started
+	get_node("Planet").connect("died", self, "_on_game_over")
 	
 func perform_spawn(event):
 	var enemy_id=event["id"]
@@ -71,3 +72,8 @@ func start_wave(wave_number):
 	if wave_number in GameData._wave_data:
 		current_wave_data = GameData.get_wave_dict(wave_number)
 	events = current_wave_data["enemies"]
+
+func _on_game_over():
+	#show game_over room
+	get_tree().change_scene("res://scenes/rooms/game_over/GameOver.tscn")
+	pass
