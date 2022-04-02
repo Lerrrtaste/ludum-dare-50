@@ -1,7 +1,6 @@
 extends GDScript
 
 
-
 var _WAVE_DATA = {
 	-1: { # default values
 		"duration": 1, # seconds
@@ -9,6 +8,7 @@ var _WAVE_DATA = {
 			0.0: [EnemiesData.None]
 		},
 	},
+
 	1: {
 		"duration": 20,
 		"enemies": {
