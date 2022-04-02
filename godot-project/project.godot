@@ -11,9 +11,8 @@ config_version=4
 [application]
 
 config/name="LudumDare50"
-run/main_scene="res://scenes/rooms/game/Game.tscn"
+run/main_scene="res://scenes/objects/Planet.tscn"
 config/icon="res://icon.png"
-<<<<<<<HEADrun/main_scene="res://scenes/objects/Planet.tscn"
 
 [autoload]
 

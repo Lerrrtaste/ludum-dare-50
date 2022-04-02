@@ -27,4 +27,3 @@ var _ENEMY_DATA = {
 		"damage_amount": 50,
 	},
 }
-
