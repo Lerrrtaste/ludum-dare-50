@@ -1,39 +1,54 @@
 extends GDScript
 
+var Enemies = GameData.EnemyData.Enemies
 
 var _WAVE_DATA = {
 	-1: { # default values
 		"duration": 1, # seconds
 		"enemies": {
-			0.0: [EnemiesData.None]
+			0.0: [Enemies.NONE],
 		},
 	},
 
 	1: {
 		"duration": 20,
-		"enemies": {
-			0.0: {
-				EnemiesData.METEOR1: 1,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.METEOR1,
+				"count": 1,
+				"timestamp": 0.1
 			},
-			0.2: {
-				EnemiesData.METEOR1: 1,
+			{
+				"id": Enemies.METEOR1,
+				"count": 1,
+				"timestamp": 0.2
 			},
-			0.4: {
-				EnemiesData.METEOR1: 2,
+			{
+				"id": Enemies.METEOR1,
+				"count": 2,
+				"timestamp": 0.3
 			},
-			0.6: {
-				EnemiesData.METEOR2: 1,
+			{
+				"id": Enemies.METEOR2,
+				"count": 1,
+				"timestamp": 0.4
 			},
-			0.7: {
-				EnemiesData.METEOR1: 1,
+			{
+				"id": Enemies.METEOR2,
+				"count": 1,
+				"timestamp": 0.5
 			},
-			0.8: {
-				EnemiesData.METEOR2: 2,
+			{
+				"id": Enemies.METEOR2,
+				"count": 2,
+				"timestamp": 0.7
 			},
-			0.9: {
-				EnemiesData.METEOR1: 2,
+			{
+				"id": Enemies.METEOR1,
+				"count": 2,
+				"timestamp": 0.9
 			},
-		},
+		],
 	},
 }
-
