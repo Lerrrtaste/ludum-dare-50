@@ -2,6 +2,8 @@ extends Node2D
 
 onready var sprite=$Sprite
 
+signal damage_dealt
+signal died
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -21,8 +23,9 @@ func _ready():
 func receive_damage(amount):
 	hp=hp-amount;
 	# handle over /underflow
-	if hp < 0:
-		hp=0;
+	if hp <= 0:
+		hp=0
+		emit_signal("died")
 	if hp > max_hp:
 		hp=max_hp;
 	#load texture according to hp
@@ -32,6 +35,7 @@ func receive_damage(amount):
 		sprite.texture = load("res://scenes/objects/planet-medium.png")
 	if hp <= 333:
 		sprite.texture = load("res://scenes/objects/planet-worse.png")
+	emit_signal("damage_dealt", amount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
