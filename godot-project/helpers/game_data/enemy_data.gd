@@ -23,14 +23,14 @@ var _ENEMY_DATA = {
 	},
 	Enemies.METEOR1: {
 		"damage_type": DamageType.IMPACT,
-		"damage_amount": 50,
+		"damage_amount": 20,
 		"speed": 20,
 		"hp": 30,
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",
 	},
 	Enemies.METEOR2: {
 		"damage_type": DamageType.IMPACT,
-		"damage_amount": 100,
+		"damage_amount": 40,
 		"speed": 50,
 		"hp": 30,
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",

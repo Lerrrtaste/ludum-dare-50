@@ -14,7 +14,7 @@ var _TOWER_DATA = {
 		"scene_path": null,
 		"resource": false, #category
 		"unlock_year": 0,
-		"hp": 100,
+		"hp": 200,
 		"cost": 0,
 		"resource_generation": 0,  #adds x resources per second
 		"resource_storage_capacity": 10,  #can store x resources max

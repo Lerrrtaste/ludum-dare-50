@@ -21,6 +21,11 @@ func _unhandled_input(event):
 		rotation_degrees = rad2deg((event.position - planet.position).angle())+90
 
 	if event is InputEventMouseButton:
+		if event.button_mask == BUTTON_RIGHT and event.pressed:
+			visible = false
+			set_process(false)
+			queue_free()
+		
 		if event.button_mask == BUTTON_LEFT and event.pressed:
 			if game.money < GameData.get_tower_property(tower_id, "cost"):
 				Notifier.notify_error("Not enough money")
@@ -28,5 +33,6 @@ func _unhandled_input(event):
 			game.money -= GameData.get_tower_property(tower_id, "cost")
 
 			var inst = load(GameData.get_tower_property(tower_id, "scene_path")).instance()
-			inst.position = planet.get_outer_pos(self.position)
+			inst.position = planet.get_outer_pos(event.position)
+			inst.rotation_degrees = rad2deg((event.position - planet.position).angle())+90
 			planet.add_child(inst)

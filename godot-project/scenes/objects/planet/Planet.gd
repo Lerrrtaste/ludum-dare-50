@@ -6,7 +6,7 @@ signal damage_dealt
 signal died
 
 const max_hp=1000
-var hp=max_hp;
+var hp=max_hp
 
 func _ready():
 	pass

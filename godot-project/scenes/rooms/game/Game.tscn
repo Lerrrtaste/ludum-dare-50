@@ -41,11 +41,17 @@ grow_horizontal = 0
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 100.0
-margin_bottom = 21.0
+margin_bottom = 39.0
 
-[node name="LblWave" type="Label" parent="ContainerWave/VBoxContainer"]
+[node name="LblWaveProgress" type="Label" parent="ContainerWave/VBoxContainer"]
 margin_right = 93.0
 margin_bottom = 14.0
+text = "progress_text"
+
+[node name="LblWaveNext" type="Label" parent="ContainerWave/VBoxContainer"]
+margin_top = 18.0
+margin_right = 93.0
+margin_bottom = 32.0
 text = "next wave text"
 
 [node name="Planet" parent="." instance=ExtResource( 2 )]
