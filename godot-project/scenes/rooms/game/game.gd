@@ -108,5 +108,10 @@ func _on_game_over():
 #### Shop
 
 func _on_BtnShop_pressed():
+	for i in get_tree().get_nodes_in_group("preview"):
+		i.queue_free()
+		i.set_process(false)
+		i.set_visible(false)
+	
 	$ContainerShop.visible = true
 

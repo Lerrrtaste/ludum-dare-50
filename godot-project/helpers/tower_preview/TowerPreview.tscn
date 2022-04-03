@@ -3,10 +3,10 @@
 [ext_resource path="res://scenes/objects/tower_base/defense_tower_placeholder.png" type="Texture" id=1]
 [ext_resource path="res://helpers/tower_preview/tower_preview.gd" type="Script" id=2]
 
-[node name="TowerPreview" type="Sprite"]
-visible = false
+[node name="TowerPreview" type="Sprite" groups=["preview"]]
 modulate = Color( 0, 0.0862745, 1, 0.607843 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -16 )
 script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]

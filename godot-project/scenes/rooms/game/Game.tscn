@@ -53,8 +53,9 @@ text = "next wave text"
 [node name="Camera2D" type="Camera2D" parent="Planet"]
 
 [node name="BtnShop" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
 text = "Open Shop"
 
 [node name="ContainerShop" parent="." instance=ExtResource( 3 )]
