@@ -1,4 +1,7 @@
 extends Node2D
+
+class_name ProjectileClass
+
 var direction
 var damage	#damage the projectile draws
 var speed	#speed of then rpjectile

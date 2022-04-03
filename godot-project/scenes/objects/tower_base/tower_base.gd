@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	if target:
 		$SprTarget.position = target.position
-	
+
 	if "projectile" in tower_data and tower_data.projectile > 0 and target:
 		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
 			shoot()
@@ -23,7 +23,7 @@ func _process(delta):
 
 
 func shoot():
-	
+
 	print("Base shooting")
 
 

@@ -139,4 +139,4 @@ func _on_BtnShop_pressed():
 		i.set_visible(false)
 	
 	$ContainerShop.visible = true
-
+	$BtnShop.visible = false
