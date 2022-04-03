@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/tower_base.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/tower_base/defense_tower_placeholder.png" type="Texture" id=2]
 [ext_resource path="res://ui/hpbar/HpBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/tower_base/tower_target.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.0294
+
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="TowerBase" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,16 +17,28 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, -14 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaBody" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBody"]
 shape = SubResource( 1 )
 
 [node name="HpBar" parent="." instance=ExtResource( 3 )]
-margin_left = -19.0
-margin_top = -28.0
+modulate = Color( 1, 1, 1, 0.556863 )
+margin_left = -17.0
+margin_top = -39.0
 margin_right = 18.0
-margin_bottom = -22.0
+margin_bottom = -25.0
 step = 1.0
 value = 100.0
-percent_visible = true
+
+[node name="AreaRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRange"]
+shape = SubResource( 2 )
+
+[node name="SprTarget" type="Sprite" parent="."]
+texture = ExtResource( 4 )
