@@ -49,6 +49,7 @@ margin_bottom = 14.0
 text = "next wave text"
 
 [node name="Planet" parent="." instance=ExtResource( 2 )]
+position = Vector2( 320, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="Planet"]
 

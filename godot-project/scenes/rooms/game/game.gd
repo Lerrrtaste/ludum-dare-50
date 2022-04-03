@@ -12,6 +12,10 @@ var events
 onready var planet = $Planet
 
 func _ready():
+	# planet to center
+	planet.position = get_viewport().size / 2
+	
+	#start waves
 	start_wave(wave)
 	emit_signal("wave_changed", wave) # emits a signal that the first wave/age/lavel started
 	get_node("Planet").connect("died", self, "_on_game_over")
@@ -42,7 +46,7 @@ func rand_pos_to_spwan()->Vector2:
 		x=value_x+get_viewport().size.x
 	#calculate y coordinate
 	if side_y >= 0:
-		x=value_y*-1
+		y=value_y*-1
 	else:
 		y=value_y+get_viewport().size.y
 	var vec := Vector2(x,y)
