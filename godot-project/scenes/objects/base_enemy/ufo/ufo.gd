@@ -6,6 +6,7 @@ const min_planet_dist = 100
 # var a = 2
 # var b = "text"
 var counter=0
+var pos_old=Vector2(0,0)
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
@@ -15,8 +16,11 @@ func _process(delta):
 	if distance < min_planet_dist:
 		position=(position+((position-target).normalized()*speed*delta)) #head away from planet
 	if distance == min_planet_dist:
-		position=target+(position-target).rotated(speed*delta*0.01)
-	pass
+		position=target+(position-target).rotated(speed*delta*0.01) #rotate in aan orbit at min_planet_dist
+	#set direction to predict movement (needed for aimin of the turrets)
+	direction=position-pos_old
+	pos_old=position
+	#shoot at projectile
 	counter = counter + delta
 	if counter > 4:
 		var ProjectileScene = load("res://scenes/objects/projectile/Projectile.tscn")
