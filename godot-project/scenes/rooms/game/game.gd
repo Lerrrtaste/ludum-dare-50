@@ -28,28 +28,40 @@ func perform_spawn(event):
 	var EnemyScene =load(enemy_scene_path)
 	for i in range(enemy_count) :
 		var enemy=EnemyScene.instance()
-		add_child(enemy)
 		enemy.position=rand_pos_to_spwan()
+		add_child(enemy)
 		print(rand_pos_to_spwan())
 	pass
 	
 func rand_pos_to_spwan()->Vector2:
+	var dist_from_border=50;
 	var side_x = randi() %2 # create bolean to decide on wich side to spawn
 	var side_y = randi() %2
-	var value_x=randi()%100 #randon number for the distance from the window border
-	var value_y=randi()%100
+	var valid_x 
+	var valid_y
+	#random x and y value that might be but doesnt have to be out of screen
+	var rand_x=(randi()%int(get_viewport().size.x+dist_from_border*2))-dist_from_border
+	var rand_y=(randi()%int(get_viewport().size.y+dist_from_border*2))-dist_from_border
 	var x
 	var y
-	#calculate x coordinate
-	if side_x >= 0:
-		x=value_x*-1
+	#calculate x and y coordinates that are out of the screen
+	if side_x > 0:
+		valid_x=dist_from_border*-1
 	else:
-		x=value_x+get_viewport().size.x
+		valid_x=dist_from_border+get_viewport().size.x
 	#calculate y coordinate
-	if side_y >= 0:
-		y=value_y*-1
+	if side_y > 0:
+		valid_y=dist_from_border*-1
 	else:
-		y=value_y+get_viewport().size.y
+		valid_y=dist_from_border+get_viewport().size.y
+	#combine a x or x value that might be in the screen to one wchich is definately out of the screen
+	var top_or_side=randi()%2
+	if top_or_side:
+		y=valid_y
+		x=rand_x
+	else:
+		y=rand_y
+		x=valid_x
 	var vec := Vector2(x,y)
 	return vec
 	
