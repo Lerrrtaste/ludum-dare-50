@@ -73,6 +73,7 @@ func perform_spawn(event):
 		enemy.hp=enemy_hp
 		enemy.damage=enemy_damage_amount
 		enemy.speed=enemy_speed
+		print(enemy_id,  " spawned")
 		add_child(enemy)
 	
 	
