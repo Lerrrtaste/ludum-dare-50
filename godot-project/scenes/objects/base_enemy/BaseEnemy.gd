@@ -16,9 +16,6 @@ func _ready():
 	target=planet.position
 
 func _process(delta):
-	var distance=(1/(target-position).length())*32
-	direction=(direction*100+(target-position).normalized()*distance).normalized()
-	position=(position+(direction*speed*delta))
 	pass
 
 func receive_damage(amount):
@@ -41,4 +38,4 @@ func die():
 func _on_Area2D_area_entered(area):
 	if area.get_parent().has_method("receive_damage"):
 		area.get_parent().receive_damage(damage)
-		receive_damage(999999)
+		die()

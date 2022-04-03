@@ -9,14 +9,15 @@ height = 7.61905
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 scale = Vector2( 0.1875, 0.21875 )
-
-[node name="Area2D" type="Area2D" parent="Sprite"]
 collision_layer = 0
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1875, 0.21875 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

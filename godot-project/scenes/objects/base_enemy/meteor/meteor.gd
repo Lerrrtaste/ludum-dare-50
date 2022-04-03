@@ -7,9 +7,12 @@ extends "res://scenes/objects/base_enemy/BaseEnemy.gd"
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
+func _process(delta):
+	var distance=(1/(target-position).length())*32
+	direction=(direction*100+(target-position).normalized()*distance).normalized()
+	position=(position+(direction*speed*delta))
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
