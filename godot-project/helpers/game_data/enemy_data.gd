@@ -18,18 +18,18 @@ var _ENEMY_DATA = {
 		"damage_type": DamageType.NONE,
 		"damage_amount": 0,
 		"projectile": null, #for shooting enemies
-		"speed": 100,
+		"speed": 10,
 	},
 	Enemies.METEOR1: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 25,
-		"speed": 100,
+		"speed": 10,
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",
 	},
 	Enemies.METEOR2: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 50,
-		"speed": 100,
+		"speed": 10,
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",
 	},
 }
