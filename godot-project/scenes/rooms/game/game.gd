@@ -72,9 +72,6 @@ func _process(delta):
 		if timestamp<wave_progress :
 			#print(timestamp,wave_progress)
 			perform_spawn(events.pop_front())
-			
-	
-
 
 func start_wave(wave_number):
 	if wave_number in GameData._wave_data:
@@ -83,8 +80,9 @@ func start_wave(wave_number):
 
 func _on_game_over():
 	#show game_over room
+	Notifier.notify_debug("Game Over")
 	get_tree().change_scene("res://scenes/rooms/game_over/GameOver.tscn")
-	pass
+
 
 #### Shop
 

@@ -8,10 +8,9 @@ var direction = Vector2(randi()%(speed*4), randi()%(speed*4)) #random start spee
 func _ready():
 	planet=get_tree().get_nodes_in_group("planet")[0]
 	target=planet.position
-	 # Replace with function body.
 
 func _process(delta):
-	#move to the target
-	direction=(direction+(target-position)).normalized()
+	print(position)
+	direction=(direction+(target-position).normalized()).normalized()
 	position=(position+(direction*speed*delta))
 	pass
