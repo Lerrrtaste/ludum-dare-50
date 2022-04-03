@@ -30,6 +30,7 @@ func perform_spawn(event):
 		var enemy=EnemyScene.instance()
 		add_child(enemy)
 		enemy.position=rand_pos_to_spwan()
+		print(rand_pos_to_spwan())
 	pass
 	
 func rand_pos_to_spwan()->Vector2:
@@ -71,7 +72,7 @@ func _process(delta):
 	if ! events.empty() :
 		var timestamp=events[0]["timestamp"]
 		if timestamp<wave_progress :
-			print(timestamp,wave_progress)
+			#print(timestamp,wave_progress)
 			perform_spawn(events.pop_front())
 
 func start_wave(wave_number):

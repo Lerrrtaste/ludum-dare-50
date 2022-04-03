@@ -23,21 +23,13 @@ var _ENEMY_DATA = {
 	Enemies.METEOR1: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 25,
-<<<<<<< HEAD
 		"speed": 10,
-=======
-		"speed": 1,
->>>>>>> 7406336 (Merge)
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",
 	},
 	Enemies.METEOR2: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 50,
-<<<<<<< HEAD
 		"speed": 10,
-=======
-		"speed": 1,
->>>>>>> 7406336 (Merge)
 		"scene_path": "res://scenes/objects/meteor/Meteor.tscn",
 	},
 }
