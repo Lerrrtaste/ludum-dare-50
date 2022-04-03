@@ -25,12 +25,18 @@ func perform_spawn(event):
 	var enemy_count=event["count"]
 	print(enemy_id," spawned")
 	var enemy_scene_path=GameData.get_enemy_property(enemy_id, "scene_path")
+	var enemy_hp=GameData.get_enemy_property(enemy_id, "hp")
+	var enemy_damage_amount=GameData.get_enemy_property(enemy_id, "damage_amount")
+	var enemy_speed= GameData.get_enemy_property(enemy_id, "speed")
 	var EnemyScene =load(enemy_scene_path)
 	for i in range(enemy_count) :
 		var enemy=EnemyScene.instance()
 		enemy.position=rand_pos_to_spwan()
+		enemy.hp=enemy_hp
+		enemy.damage=enemy_damage_amount
+		enemy.speed=enemy_speed
 		add_child(enemy)
-		print(rand_pos_to_spwan())
+		#print(rand_pos_to_spwan())
 	pass
 	
 func rand_pos_to_spwan()->Vector2:
