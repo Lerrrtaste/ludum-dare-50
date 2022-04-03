@@ -9,12 +9,6 @@ const max_hp=1000
 var hp=max_hp;
 
 func _ready():
-	receive_damage(20)
-	yield(get_tree().create_timer(1.0),"timeout")
-	receive_damage(400)
-	yield(get_tree().create_timer(1.0),"timeout")
-	receive_damage(1000)
-	yield(get_tree().create_timer(1.0),"timeout")
 	pass
 
 func receive_damage(amount):
