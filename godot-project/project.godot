@@ -23,7 +23,7 @@ _global_script_class_icons={
 config/name="LudumDare50"
 run/main_scene="res://scenes/rooms/game/Game.tscn"
 config/icon="res://icon.png"
-<<<<<<<HEADrun/main_scene="res://scenes/objects/Planet.tscn"
+run/main_scene="res://scenes/objects/Planet.tscn"
 
 [autoload]
 
