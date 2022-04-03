@@ -6,6 +6,7 @@ var hp
 var damage
 var speed
 var direction
+var fire_rate
 
 signal damage_dealt
 signal died

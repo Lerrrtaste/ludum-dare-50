@@ -65,6 +65,7 @@ func perform_spawn(event):
 	var enemy_hp=GameData.get_enemy_property(enemy_id, "hp")
 	var enemy_damage_amount=GameData.get_enemy_property(enemy_id, "damage_amount")
 	var enemy_speed= GameData.get_enemy_property(enemy_id, "speed")
+	var enemy_fire_rate= GameData.get_enemy_property(enemy_id, "fire_rate")
 	var EnemyScene = load(enemy_scene_path)
 	
 	for i in range(enemy_count) :
@@ -73,6 +74,7 @@ func perform_spawn(event):
 		enemy.hp=enemy_hp
 		enemy.damage=enemy_damage_amount
 		enemy.speed=enemy_speed
+		enemy.fire_rate=enemy_fire_rate
 		print(enemy_id,  " spawned")
 		add_child(enemy)
 	

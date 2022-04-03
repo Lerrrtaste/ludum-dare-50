@@ -22,7 +22,7 @@ func _process(delta):
 	pos_old=position
 	#shoot at projectile
 	counter = counter + delta
-	if counter > 4:
+	if counter > fire_rate:
 		var ProjectileScene = load("res://scenes/objects/projectile/Projectile.tscn")
 		var projectile=ProjectileScene.instance()
 		game.add_child(projectile)
