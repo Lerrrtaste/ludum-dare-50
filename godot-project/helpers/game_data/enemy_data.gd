@@ -5,6 +5,7 @@ enum Enemies {
 	METEOR1,
 	METEOR2,
 }
+
 enum DamageType {
 	NONE = -1,
 	IMPACT,

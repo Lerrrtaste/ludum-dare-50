@@ -14,15 +14,15 @@ var _wave_ids
 
 func _ready():
 	var Enemies = EnemyScene.new()
-	_enemy_ids = Enemy.Enemies
-	_enemy_data = Enemy._ENEMY_DATA
+	_enemy_ids = Enemies.Enemies
+	_enemy_data = Enemies._ENEMY_DATA
 
-	var Towers = EnemyScene.new()
+	var Towers = TowerScene.new()
 	_tower_ids = Towers.Towers
 	_tower_data = Towers._TOWER_DATA
 	
 	var Waves = WaveScene.new()
-	_wave_ids = Waves.Waves
+	_wave_ids = Waves._WAVE_DATA.keys()
 	_wave_data = Waves._WAVE_DATA
 
 

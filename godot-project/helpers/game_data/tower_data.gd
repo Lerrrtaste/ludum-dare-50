@@ -1,33 +1,54 @@
 extends GDScript
 
-enum Tower {
+enum Towers {
 	DEFAULT = -1,
 	RESOURCE_STORAGE,
 	RESOURCE_EXTRACTOR,
+	MG,
 }
 
 var _TOWER_DATA = {
-	Tower.DEFAULT: {
+	Towers.DEFAULT: {
 		"name": "N/A",
 		"icon_path": null,
 		"scene_path": null,
+		"resource": false, #category
 		"unlock_year": 0,
 		"hp": 100,
 		"cost": 0,
 		"resource_generation": 0,  #adds x resources per second
 		"resource_storage_capacity": 10,  #can store x resources max
 	},
-	Tower.RESOURCE_STORAGE: {
+	Towers.RESOURCE_STORAGE: {
+		"name": "Resource Storage",
+		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
+		"scene_path": null,
+		"resource": true,
 		"unlock_year": 0,
 		"hp": 300,
 		"cost": 0,
 		"resource_storage_capacity": 1000,
 	},
-	Tower.RESOURCE_EXTRACTOR: {
+	Towers.RESOURCE_EXTRACTOR: {
+		"name": "Resource Extractor",
+		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
+		"scene_path": null,
+		"resource": true,
 		"unlock_year": 0,
 		"hp": 50,
 		"cost": 0,
 		"resource_generation": 10,
 		"resource_storage_capacity": 100,
+	},
+	Towers.MG: {
+		"name": "Machine Gun Turret",
+		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
+		"scene_path": null,
+		"resource": false,
+		"unlock_year": 0,
+		"hp": 100,
+		"cost": 0,
+		"resource_generation": 0,  #adds x resources per second
+		"resource_storage_capacity": 10,  #can store x resources max
 	},
 }

@@ -4,11 +4,7 @@
 [ext_resource path="res://scenes/objects/planet/Planet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/shop/Shop.tscn" type="PackedScene" id=3]
 
-<<<<<<< HEAD
-[node name="Game" type="CanvasLayer"]
-=======
 [node name="Game" type="CanvasLayer" groups=["game"]]
->>>>>>> fb3be78 (Worked on Shop, Added Game UI; Changed GameData; Added HP Bar; Added Placeholder Tower,)
 script = ExtResource( 1 )
 
 [node name="ContainerStats" type="PanelContainer" parent="."]
@@ -62,6 +58,5 @@ margin_bottom = 20.0
 text = "Open Shop"
 
 [node name="ContainerShop" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [connection signal="pressed" from="BtnShop" to="." method="_on_BtnShop_pressed"]

@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/defense_tower_placeholder.png" type="Texture" id=1]
 [ext_resource path="res://ui/shop/shop_item/shop_item.gd" type="Script" id=2]
 
+[sub_resource type="StyleBoxEmpty" id=1]
+
 [node name="ShopItem" type="PanelContainer"]
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 45.0
-margin_bottom = 99.0
+margin_right = 38.0
+margin_bottom = 92.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 

@@ -41,4 +41,4 @@ func receive_damage(amount):
 	emit_signal("damage_dealt", amount)
 
 func get_outer_pos(mouse_pos:Vector2)->Vector2:
-	return (position - mouse_pos).normlized() * collision_shape.get_radius()
+	return (position - mouse_pos).normalized() * collision_shape.get_radius()

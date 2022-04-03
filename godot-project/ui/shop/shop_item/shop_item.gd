@@ -8,7 +8,7 @@ onready var game = get_tree().get_nodes_in_group("game")[0]
 
 signal tower_selected(tower_id)
 
-func populate(p_tower_id):
+func set_tower_id(p_tower_id):
 	tower_id = p_tower_id
 	$GridContainer/LblName.text = GameData.get_tower_property(tower_id, "name")
 	$GridContainer/LblPrice.text = GameData.get_tower_property(tower_id, "name")
@@ -30,9 +30,3 @@ func _on_BtnBuy_pressed():
 		return
 
 	emit_signal("tower_selected", tower_id)
-
-func _on_TowerPreview_placed():
-	# buy tower
-	GameData.money -= GameData.get_tower_property(tower_id, "cost")
-
-	Notifier.notify_error("Tower bought")

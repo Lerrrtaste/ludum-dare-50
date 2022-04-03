@@ -77,16 +77,13 @@ func start_wave(wave_number):
 		current_wave_data = GameData.get_wave_dict(wave_number)
 	events = current_wave_data["enemies"]
 
-<<<<<<< HEAD
 func _on_game_over():
 	#show game_over room
 	get_tree().change_scene("res://scenes/rooms/game_over/GameOver.tscn")
 	pass
-=======
-
 
 #### Shop
 
 func _on_BtnShop_pressed():
 	$ContainerShop.visible = true
->>>>>>> fb3be78 (Worked on Shop, Added Game UI; Changed GameData; Added HP Bar; Added Placeholder Tower,)
+
