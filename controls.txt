@@ -1,0 +1,8 @@
+left click
+  - on enemy -> select as priority
+  - on tower -> only set priority for this tower
+  - buy tower
+
+right click
+  - cancel priority
+  - cancel tower placement

@@ -72,3 +72,4 @@ anchor_top = 1.0
 margin_top = -75.0
 
 [connection signal="pressed" from="BtnShop" to="." method="_on_BtnShop_pressed"]
+[connection signal="hide" from="ContainerShop" to="." method="_on_ContainerShop_hide"]

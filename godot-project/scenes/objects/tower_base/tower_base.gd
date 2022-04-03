@@ -1,5 +1,8 @@
 extends Node2D
 
+var ProjectileClass = preload("res://scenes/objects/projectile/Projectile.tscn")
+onready var game = get_tree().get_nodes_in_group("game")[0]
+
 var tower_data
 var tower_id = -1
 var hp = -1
@@ -14,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if target:
-		$SprTarget.global_position = target.global_position
+		pass#$SprTarget.global_position = target.global_position
 
 	if "projectile" in tower_data and tower_data.projectile > 0 and target:
 		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:

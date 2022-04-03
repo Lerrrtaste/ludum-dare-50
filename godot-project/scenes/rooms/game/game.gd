@@ -140,3 +140,7 @@ func _on_BtnShop_pressed():
 	
 	$ContainerShop.visible = true
 	$BtnShop.visible = false
+
+
+func _on_ContainerShop_hide():
+	$BtnShop.visible = true

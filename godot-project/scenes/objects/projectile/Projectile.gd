@@ -35,13 +35,13 @@ func start_direction(pdirection:Vector2, projectile_type:int, fired_by_enemy:boo
 			sprite.texture = load("res://scenes/objects/projectile/projectile-flag.png")
 			direction=pdirection.normalized()
 			damage=50
-			speed=15
+			speed=25
 			set_process(true)
 		3:	#the rocket launcher projectile (non homing)
 			sprite.texture = load("res://scenes/objects/projectile/projectile-rocket.png")
 			direction=pdirection.normalized()
-			damage=100
-			speed=100
+			damage=20
+			speed=50
 			set_process(true)
 		_:
 				print("projectile type does not exist")

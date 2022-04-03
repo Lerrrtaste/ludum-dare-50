@@ -23,5 +23,10 @@ func _ready():
 		item.set_tower_id(i)
 		item.connect("tower_selected", self, "_on_ShopItem_item_selected")
 
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_mask == BUTTON_RIGHT and event.pressed:
+			visible = false
+
 func _on_ShopItem_item_selected(tower_id):
 	visible = false
