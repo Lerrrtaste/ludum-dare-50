@@ -16,7 +16,6 @@ func _ready():
 	target=planet.position
 
 func _process(delta):
-	#print(position)
 	direction=(direction+(target-position).normalized()).normalized()
 	position=(position+(direction*speed*delta))
 	pass

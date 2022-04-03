@@ -26,7 +26,7 @@ var _TOWER_DATA = {
 		"resource": true,
 		"unlock_year": 0,
 		"hp": 300,
-		"cost": 0,
+		"cost": 150,
 		"resource_storage_capacity": 1000,
 	},
 	Towers.RESOURCE_EXTRACTOR: {
@@ -36,18 +36,18 @@ var _TOWER_DATA = {
 		"resource": true,
 		"unlock_year": 0,
 		"hp": 50,
-		"cost": 0,
+		"cost": 25,
 		"resource_generation": 10,
 		"resource_storage_capacity": 100,
 	},
 	Towers.MG: {
 		"name": "Machine Gun Turret",
 		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
-		"scene_path": null,
+		"scene_path": "res://scenes/objects/tower_base/TowerBase.tscn",
 		"resource": false,
 		"unlock_year": 0,
 		"hp": 100,
-		"cost": 0,
+		"cost": 75,
 		"resource_generation": 0,  #adds x resources per second
 		"resource_storage_capacity": 10,  #can store x resources max
 	},

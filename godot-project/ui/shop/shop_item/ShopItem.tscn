@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/defense_tower_placeholder.png" type="Texture" id=1]
 [ext_resource path="res://ui/shop/shop_item/shop_item.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
+[sub_resource type="ViewportTexture" id=2]
+
 [node name="ShopItem" type="PanelContainer"]
+mouse_filter = 1
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
 margin_right = 38.0
-margin_bottom = 92.0
+margin_bottom = 68.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -20,21 +23,17 @@ margin_right = 38.0
 margin_bottom = 14.0
 text = "Name"
 
-[node name="TextureIcon" type="TextureRect" parent="VBox"]
+[node name="BtnBuy" type="TextureButton" parent="VBox"]
 margin_top = 18.0
 margin_right = 38.0
 margin_bottom = 50.0
-texture = ExtResource( 1 )
+texture_normal = ExtResource( 1 )
+texture_pressed = SubResource( 2 )
 
 [node name="LblPrice" type="Label" parent="VBox"]
 margin_top = 54.0
 margin_right = 38.0
 margin_bottom = 68.0
-text = "100$"
+text = "price"
 
-[node name="BtnBuy" type="Button" parent="VBox"]
-margin_top = 72.0
-margin_right = 38.0
-margin_bottom = 92.0
-disabled = true
-text = "Buy"
+[connection signal="pressed" from="VBox/BtnBuy" to="." method="_on_BtnBuy_pressed"]

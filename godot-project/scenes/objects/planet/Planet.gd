@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var sprite=$Sprite
-onready var collision_shape = $AreaBody/CollisionShape
+onready var collision_shape = $AreaBody/CollisionShape2D
 signal damage_dealt
 signal died
 
@@ -35,4 +35,4 @@ func receive_damage(amount):
 	emit_signal("damage_dealt", amount)
 
 func get_outer_pos(mouse_pos:Vector2)->Vector2:
-	return (position - mouse_pos).normalized() * collision_shape.get_radius()
+	return (mouse_pos - position).normalized() * collision_shape.shape.radius

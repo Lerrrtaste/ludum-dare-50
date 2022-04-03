@@ -4,6 +4,7 @@
 [ext_resource path="res://helpers/tower_preview/tower_preview.gd" type="Script" id=2]
 
 [node name="TowerPreview" type="Sprite"]
+visible = false
 modulate = Color( 0, 0.0862745, 1, 0.607843 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

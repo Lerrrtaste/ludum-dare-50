@@ -58,5 +58,8 @@ margin_bottom = 20.0
 text = "Open Shop"
 
 [node name="ContainerShop" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_top = 1.0
+margin_top = -75.0
 
 [connection signal="pressed" from="BtnShop" to="." method="_on_BtnShop_pressed"]

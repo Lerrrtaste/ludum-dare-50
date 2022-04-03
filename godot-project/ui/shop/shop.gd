@@ -12,12 +12,16 @@ func _ready():
 	
 	for i in tower_ids.values():
 		if i < 0:
-			return
+			continue
 		
 		var container = container_defenese
 		if GameData.get_tower_property(i, "resource"): # is resource
 			container = container_resource
 
 		var item = ShopItem.instance()
-		item.set_tower_id(i)
 		container.add_child(item)
+		item.set_tower_id(i)
+		item.connect("tower_selected", self, "_on_ShopItem_item_selected")
+
+func _on_ShopItem_item_selected(tower_id):
+	visible = false
