@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
-}, {
-"base": "Node2D",
-"class": "ProjectileClass",
-"language": "GDScript",
-"path": "res://scenes/objects/projectile/Projectile.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": "",
-"ProjectileClass": ""
+"GitAPI": ""
 }
 
 [application]
@@ -29,6 +23,7 @@ _global_script_class_icons={
 config/name="LudumDare50"
 run/main_scene="res://scenes/rooms/game/Game.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEADrun/main_scene="res://scenes/objects/Planet.tscn"
 
 [autoload]
 

@@ -14,7 +14,7 @@ func _ready():
 
 func _process(delta):
 	if target:
-		$SprTarget.position = target.position
+		$SprTarget.global_position = target.global_position
 
 	if "projectile" in tower_data and tower_data.projectile > 0 and target:
 		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
@@ -23,7 +23,6 @@ func _process(delta):
 
 
 func shoot():
-
 	print("Base shooting")
 
 
@@ -57,10 +56,8 @@ func _on_AreaRange_area_entered(area):
 	if not target and area.get_parent().has_method("receive_damage"):
 		target = area.get_parent()
 		$SprTarget.visible = true
-		print("New Target", area.get_parent())
 
 func _on_AreaRange_area_exited(area):
 	if target and target == area.get_parent():
 		target = null
 		$SprTarget.visible = false
-		print("Target lost", area.get_parent())
