@@ -11,12 +11,13 @@ signal damage_dealt
 signal died
 
 func _ready():
-	direction= Vector2(randi()%(speed*4), randi()%(speed*4)) #random start speed
+	direction= Vector2(randi(), randi()).normalized() #random start speed
 	planet=get_tree().get_nodes_in_group("planet")[0]
 	target=planet.position
 
 func _process(delta):
-	direction=(direction+(target-position).normalized()).normalized()
+	var distance=(1/(target-position).length())*32
+	direction=(direction*100+(target-position).normalized()*distance).normalized()
 	position=(position+(direction*speed*delta))
 	pass
 

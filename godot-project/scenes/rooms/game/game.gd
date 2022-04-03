@@ -50,7 +50,6 @@ func rand_pos_to_spwan()->Vector2:
 	var rand_y=(randi()%int(get_viewport().size.y+dist_from_border*2))-dist_from_border
 	var x
 	var y
-	var y
 	#calculate x and y coordinates that are out of the screen
 	if side_x > 0:
 		valid_x=dist_from_border*-1
