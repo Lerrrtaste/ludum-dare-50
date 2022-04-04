@@ -7,6 +7,7 @@ enum Projectiles {
 	FLAK,
 	MISSILE,
 	LASER,
+	NUKE,
 }
 
 var _PROJECTILE_DATA = {
@@ -38,5 +39,10 @@ var _PROJECTILE_DATA = {
 		"damage":200,
 		"speed":200,
 		"scene_path": "res://scenes/objects/BaseProjectile/laser/laser.tscn",
+	},
+	Projectiles.NUKE: {
+		"damage":200,
+		"speed":200,
+		"scene_path": "res://scenes/objects/BaseProjectile/nuke/nuke.tscn",
 	},
 }
