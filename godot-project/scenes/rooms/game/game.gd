@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal wave_changed
 
+var ShopItem = preload("res://ui/shop/shop_item/ShopItem.tscn")
+
 var money = 1000
 
 var wave = 1  # aka year
@@ -41,6 +43,7 @@ func start_wave(wave_number):
 	for k in current_wave_data["enemies"] :
 		events.append(k)
 	
+
 	
 func progress_wave(delta):
 	wave_progress += delta/current_wave_data["duration"]
@@ -49,12 +52,12 @@ func progress_wave(delta):
 		wave = wave + 1
 		start_wave(wave)
 		wave_progress=0.0
-		emit_signal("wave_changed", wave) #emit a signal that the wave/age/level has been changed
+		#emit_signal("wave_changed", wave) #emit a signal that the wave/age/level has been changed
 		print("new wave/age entered")
 	
 	if ! events.empty() :
 		var timestamp=events[0]["timestamp"]
-		if timestamp<wave_progress :
+		if timestamp<wave_progress:
 			perform_spawn(events.pop_front())
 	
 	

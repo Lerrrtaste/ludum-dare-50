@@ -9,7 +9,7 @@
 [ext_resource path="res://scenes/objects/tower_base/snd_tower_damaged.mp3" type="AudioStream" id=7]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel2.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg2.png" type="Texture" id=9]
-[ext_resource path="res://ui/shop/snd_tower_built.mp3" type="AudioStream" id=10]
+[ext_resource path="res://scenes/objects/tower_base/snd_tower_built.ogg" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -90,5 +90,5 @@ stream = ExtResource( 7 )
 
 [node name="AudioPlaced" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = 14.546
+volume_db = 10.545
 autoplay = true

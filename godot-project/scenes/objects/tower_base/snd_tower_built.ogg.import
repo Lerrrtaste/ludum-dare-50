@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snd_tower_built.ogg-355475209633d342952cf7427c7e4f00.oggstr"
+
+[deps]
+
+source_file="res://scenes/objects/tower_base/snd_tower_built.ogg"
+dest_files=[ "res://.import/snd_tower_built.ogg-355475209633d342952cf7427c7e4f00.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

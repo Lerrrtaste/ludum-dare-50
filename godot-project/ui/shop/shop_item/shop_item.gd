@@ -1,7 +1,9 @@
 extends Panel
 
 onready var planet = get_tree().get_nodes_in_group("planet")[0]
+onready var game = get_tree().get_nodes_in_group("game")[0]
 onready var btn_buy = $BtnBuy
+onready var tex_icon = $TexIcon
 onready var lbl_price = $LblPrice
 onready var lbl_name = $LblName
 
@@ -12,30 +14,38 @@ var tower_data
 var is_unlocked = false
 
 signal tower_selected(tower_id)
+signal tower_unlocked(tower_id)
 
-func _ready():
-	btn_buy.disabled = true
 	
 func set_tower_id(p_tower_id, unlocked):
 	tower_id = p_tower_id
 	is_unlocked = unlocked
 
 	lbl_name.text = GameData.get_tower_property(tower_id, "name")
-	btn_buy.texture_normal = load(GameData.get_tower_property(tower_id, "icon_path"))
+	tex_icon.texture = load(GameData.get_tower_property(tower_id, "icon_path"))
 
 	tower_data = GameData.get_tower_dict(tower_id)
 	
 	if is_unlocked:
 		lbl_price.text = str(GameData.get_tower_property(tower_id, "cost"))
-		btn_buy.disabled = false
 	else:
-		lbl_price.text = "LOCKED"
+		lbl_price.text = str(GameData.get_tower_property(tower_id, "unlock_cost"))
+
 
 func _on_BtnBuy_pressed():
 	# start tower preview
 	if not is_unlocked:
-		Notifier.notify_error("Not unlocked","Available in wave %s"%tower_data.unlock_year)
-		return
+		if game.money >= GameData.get_tower_property(tower_id, "unlock_cost"):
+			game.money -= GameData.get_tower_property(tower_id, "unlock_cost")
+			is_unlocked = true
+			btn_buy.disabled = false
+			emit_signal("tower_unlocked", tower_id)
+			visible = false
+			queue_free()
+			return
+		else:
+			Notifier.notify_error("Not enough money!")
+			return
 
 	for i in get_tree().get_nodes_in_group("preview"):
 		i.queue_free()

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/snd_tower_damaged.mp3-20b6eaa25fe00bde2080b641d79388
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
