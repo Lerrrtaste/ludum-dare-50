@@ -42,7 +42,7 @@ var _PROJECTILE_DATA = {
 	},
 	Projectiles.NUKE: {
 		"damage":200,
-		"speed":200,
+		"speed":50,
 		"scene_path": "res://scenes/objects/BaseProjectile/nuke/nuke.tscn",
 	},
 }

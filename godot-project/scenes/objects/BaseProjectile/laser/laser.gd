@@ -1,5 +1,5 @@
 extends "res://scenes/objects/BaseProjectile/BaseProjectile.gd"
-var id_in_dict=GameData._projectile_ids.SNIPER
+var id_in_dict=GameData._projectile_ids.LASER
 
 # Declare member variables here. Examples:
 # var a = 2
