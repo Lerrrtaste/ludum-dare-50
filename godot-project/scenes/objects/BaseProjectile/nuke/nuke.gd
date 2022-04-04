@@ -1,6 +1,6 @@
 extends "res://scenes/objects/BaseProjectile/BaseProjectile.gd"
 var id_in_dict=GameData._projectile_ids.SNIPER
-
+onready var Range=$range
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -16,3 +16,11 @@ func start(pdirection, pfired_by_enemy:bool):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_Area2D_area_entered(area):
+		if area.get_parent().has_method("receive_damage"):
+			area.get_parent().receive_damage(damage)
+			var enemies= Range.get_overlapping_areas()
+			for j in enemies:
+				if j.get_parent().has_method("receive_damage"):
+					get_parent().receive_damage(damage/3)
+			queue_free()
