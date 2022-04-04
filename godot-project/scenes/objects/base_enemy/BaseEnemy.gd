@@ -3,6 +3,7 @@ extends Node2D
 var planet
 var target
 var hp
+var hp_max
 var damage
 var speed
 var direction
@@ -15,6 +16,7 @@ func _ready():
 	direction= Vector2(randi(), randi()).normalized() #random start speed
 	planet=get_tree().get_nodes_in_group("planet")[0]
 	target=planet.position
+	hp_max = hp
 
 func _process(delta):
 	pass
@@ -33,8 +35,10 @@ func set_target_to_nearest():
 	target=closest
 			
 func receive_damage(amount):
+	$HpBar.visible = true
 	hp = hp - amount
-
+	$HpBar.value = (float(hp)/float(hp_max))
+	print("hp",hp," hpmax",hp_max, " value", $HpBar.value)
 	# die
 	if hp <= 0:
 		hp=0

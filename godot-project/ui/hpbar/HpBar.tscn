@@ -6,15 +6,23 @@
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 32, 8 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 1.0
+margin_bottom = 1.0
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 32, 8 )
+margin_left = 3.0
+margin_right = 3.0
+margin_top = 1.0
+margin_bottom = 1.0
 
 [node name="HpBar" type="ProgressBar"]
 margin_right = 51.0
 margin_bottom = 14.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
-value = 59.0
+value = 100.0
 percent_visible = false

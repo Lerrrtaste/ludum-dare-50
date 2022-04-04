@@ -15,7 +15,7 @@ onready var lbl_planet_hp = $ContainerStats/VBoxContainer/LblPlanetHP
 onready var lbl_wave = $ContainerStats/VBoxContainer/LblWave
 onready var lbl_wave_progress = $ContainerWave/VBoxContainer/LblWaveProgress
 onready var lbl_wave_next = $ContainerWave/VBoxContainer/LblWaveNext
-
+var WarningMarkerClass = preload("res://ui/warning_mark/WarningMarker.tscn")
 
 func _ready():
 	# signals
@@ -67,10 +67,20 @@ func perform_spawn(event):
 	var enemy_speed= GameData.get_enemy_property(enemy_id, "speed")
 	var enemy_fire_rate= GameData.get_enemy_property(enemy_id, "fire_rate")
 	var EnemyScene = load(enemy_scene_path)
+
 	
 	for i in range(enemy_count) :
 		var enemy=EnemyScene.instance()
-		enemy.position=rand_pos_to_spawn()
+		var e_pos = rand_pos_to_spawn()
+		
+		var inst = WarningMarkerClass.instance()
+		var warn_pos = e_pos
+		add_child(inst)
+		warn_pos.x = clamp(warn_pos.x, inst.texture.get_width(), get_viewport().get_visible_rect().size.x-inst.texture.get_width())
+		warn_pos.y = clamp(warn_pos.y, inst.texture.get_height(), get_viewport().get_visible_rect().size.y-inst.texture.get_height())
+		inst.position = warn_pos
+		
+		enemy.position=e_pos
 		enemy.hp=enemy_hp
 		enemy.damage=enemy_damage_amount
 		enemy.speed=enemy_speed
@@ -114,7 +124,6 @@ func rand_pos_to_spawn()->Vector2:
 		x=valid_x
 	
 	return Vector2(x,y)
-	
 	
 func _on_game_over():
 	#show game_over room

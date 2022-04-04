@@ -71,7 +71,6 @@ margin_top = -27.0
 margin_right = 10.0
 margin_bottom = -22.0
 step = 1.0
-value = 100.0
 
 [node name="AreaRange" type="Area2D" parent="."]
 collision_layer = 0
