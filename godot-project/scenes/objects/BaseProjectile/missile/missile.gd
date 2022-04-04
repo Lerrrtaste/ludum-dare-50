@@ -13,6 +13,8 @@ func start(ptarget, pfired_by_enemy:bool):
 	fired_by_enemy=pfired_by_enemy
 	.fetch_data_from_dic(id_in_dict)
 	set_process(true)
+	var randint=(randi()%2)+1
+	SoundPlayer.play("Rocket Launched %s.wav"%randint)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

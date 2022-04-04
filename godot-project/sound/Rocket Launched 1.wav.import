@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rocket Launched 1.wav-b3b9b5161ffe2e2fc0b5fac2def886f6.sample"
+
+[deps]
+
+source_file="res://sound/Rocket Launched 1.wav"
+dest_files=[ "res://.import/Rocket Launched 1.wav-b3b9b5161ffe2e2fc0b5fac2def886f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

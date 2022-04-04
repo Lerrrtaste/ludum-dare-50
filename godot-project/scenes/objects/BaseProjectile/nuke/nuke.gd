@@ -1,20 +1,16 @@
 extends "res://scenes/objects/BaseProjectile/BaseProjectile.gd"
 var id_in_dict=GameData._projectile_ids.NUKE
-<<<<<<< HEAD
+
 onready var area_range=$range
 onready var audio=$detonate
-=======
-onready var Range=$range
-<<<<<<< HEAD
-onready var audio=$AudioStreamPlayer
->>>>>>> af22596 (Effects)
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-=======
+
 
 var Explosion = preload("res://helpers/explosion/Explosion.tscn")
->>>>>>> 5175a77 (Effects)
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +20,7 @@ func start(pdirection, pfired_by_enemy:bool):
 	direction=pdirection.normalized()
 	.fetch_data_from_dic(id_in_dict)
 	set_process(true)
+	SoundPlayer.play("Rocket Launched 3.wav")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

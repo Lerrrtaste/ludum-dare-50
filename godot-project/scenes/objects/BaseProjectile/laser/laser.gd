@@ -12,6 +12,8 @@ func start(pdirection, pfired_by_enemy:bool):
 	fired_by_enemy=pfired_by_enemy
 	direction=pdirection.normalized()
 	.fetch_data_from_dic(id_in_dict)
+	var randint=(randi()%5)+1
+	SoundPlayer.play("Laser %s.wav"%randint)
 	set_process(true)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/tower_base.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg1.png" type="Texture" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://sound/snd_tower_damaged.wav" type="AudioStream" id=7]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel2.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg2.png" type="Texture" id=9]
-[ext_resource path="res://sound/snd_tower_built.wav" type="AudioStream" id=10]
+[ext_resource path="res://sound/mechanical_popup.wav" type="AudioStream" id=10]
+[ext_resource path="res://sound/Machine Gun - Short.wav" type="AudioStream" id=11]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 8.0
@@ -105,8 +106,12 @@ stream = ExtResource( 7 )
 
 [node name="AudioPlaced" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = 10.545
+volume_db = 0.09
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/damage = SubResource( 5 )
+
+[node name="AudioShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.533

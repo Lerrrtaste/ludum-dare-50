@@ -12,11 +12,13 @@ func _ready():
 	pass
 
 func receive_damage(amount):
+	SoundPlayer.play("Planet Damaged.wav")
 	hp=hp-amount;
 	$AnimationPlayer.play("damage")
 	# die
 	if hp <= 0:
 		hp=0
+		SoundPlayer.play("Planet Destroyed.wav")
 		emit_signal("died")
 		return
 

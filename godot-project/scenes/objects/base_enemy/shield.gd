@@ -15,6 +15,7 @@ func shield():
 
 func receive_damage(amount):
 	hp = hp - amount
+	SoundPlayer.play("Shield Damaged.wav")
 	# die
 	if hp <= 0:
 		hp=0

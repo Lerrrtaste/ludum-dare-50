@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mechanical_popup.wav-8ddfde804858e25ca36eaf873cd153d6.sample"
+
+[deps]
+
+source_file="res://sound/mechanical_popup.wav"
+dest_files=[ "res://.import/mechanical_popup.wav-8ddfde804858e25ca36eaf873cd153d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0
