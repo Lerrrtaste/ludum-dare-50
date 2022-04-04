@@ -18,12 +18,16 @@ func _ready():
 
 func _process(delta):
 	if target:
-		pass#TODO rotate barrel target.global_position-SprTarget.global_position
+		if not is_instance_valid(target):
+			target = null
+			update_auto_target()
+			return
+		$SprBarrel.rotation = (target.position - global_position).angle() + deg2rad(90) - rotation
 
-	if "projectile" in tower_data and tower_data.projectile > 0 and target:
-		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
-			shoot()
-			shoot_last = OS.get_ticks_msec()
+		if "projectile" in tower_data and tower_data.projectile > 0:
+			if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
+				shoot()
+				shoot_last = OS.get_ticks_msec()
 
 
 func shoot():
@@ -61,15 +65,19 @@ func update_auto_target():
 	
 	var closest
 	for i in in_range:
-		if not i or i.get_parent().has_method("receive_damage"):
+		if not i or not i.get_parent().has_method("receive_damage"):
 			continue
 		if not closest or closest.get_parent().global_position-position > i.get_parent().global_position-position:
 			closest = i
 	
 	if closest:
 		target = closest.get_parent()
+		$SprBarrel.play("active")
+		$SprTower.play("active")
 		$SprTarget.visible = true
 	else:
+		$SprBarrel.play("idle")
+		$SprTower.play("idle")
 		$SprTarget.visible = false
 
 func _on_AreaRange_area_entered(area):

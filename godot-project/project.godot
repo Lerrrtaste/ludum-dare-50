@@ -22,8 +22,9 @@ _global_script_class_icons={
 
 config/name="LudumDare50"
 run/main_scene="res://scenes/rooms/game/Game.tscn"
+boot_splash/image="res://scenes/objects/planet/planet-good.png"
+boot_splash/bg_color=Color( 0, 0.0313726, 0.290196, 1 )
 config/icon="res://icon.png"
-run/main_scene="res://scenes/objects/Planet.tscn"
 
 [autoload]
 
