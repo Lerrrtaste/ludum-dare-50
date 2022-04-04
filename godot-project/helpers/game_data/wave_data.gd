@@ -13,22 +13,22 @@ var _WAVE_DATA = {
 	},
 
 	1: {
-		"duration": 20,
+		"duration": 60,
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
 				"id": Enemies.METEORBIG,
-				"count": 8,
+				"count": 2,
 				"timestamp": 0.1
 			},
 			{
 				"id": Enemies.METEORBIG,
-				"count": 4,
+				"count": 2,
 				"timestamp": 0.2
 			},
 			{
 				"id": Enemies.METEORBIG,
-				"count": 20,
+				"count": 2,
 				"timestamp": 0.3
 			},
 			{
@@ -38,7 +38,7 @@ var _WAVE_DATA = {
 			},
 			{
 				"id": Enemies.METEORBIG,
-				"count": 5,
+				"count": 2,
 				"timestamp": 0.5
 			},
 			{
@@ -54,7 +54,7 @@ var _WAVE_DATA = {
 		],
 	},
 	2: {
-		"duration": 20,
+		"duration": 60,
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{

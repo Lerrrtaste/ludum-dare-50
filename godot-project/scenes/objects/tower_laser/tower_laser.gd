@@ -1,8 +1,7 @@
 extends "res://scenes/objects/tower_base/tower_base.gd"
 
-
-onready var Projectile = load(GameData.get_projectile_property(GameData._projectile_ids.NUKE, "scene_path"))
-onready var TOWER_ID = GameData._tower_ids.NUKE
+onready var Projectile = load(GameData.get_projectile_property(GameData._projectile_ids.LASER, "scene_path"))
+onready var TOWER_ID = GameData._tower_ids.LASER
 
 func _ready():
 	._ready()

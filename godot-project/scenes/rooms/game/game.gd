@@ -93,15 +93,15 @@ func perform_spawn(event):
 	
 	
 func rand_pos_to_spawn()->Vector2:
-	var dist_from_border=50;
+	var dist_from_border=100;
 	var side_x = randi() %2 # create bolean to decide on wich side to spawn
 	var side_y = randi() %2
 	var valid_x 
 	var valid_y
 	
 	#random x and y value that might be but doesnt have to be out of screen
-	var rand_x=(randi()%int(get_viewport().size.x+dist_from_border*2))-dist_from_border
-	var rand_y=(randi()%int(get_viewport().size.y+dist_from_border*2))-dist_from_border
+	var rand_x=(randi()%int(get_viewport().size.x))
+	var rand_y=(randi()%int(get_viewport().size.y))
 	var x
 	var y
 	

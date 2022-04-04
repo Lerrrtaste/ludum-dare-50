@@ -13,9 +13,9 @@ signal damage_dealt
 signal died
 
 func _ready():
-	direction= Vector2(randi(), randi()).normalized() #random start speed
-	planet=get_tree().get_nodes_in_group("planet")[0]
-	target=planet.position
+	planet = get_tree().get_nodes_in_group("planet")[0]
+	direction = (global_position - planet.global_position).normalized().rotated((deg2rad(randi()%20) -10)) #Vector2(randi(), randi()).normalized() #random start speed
+	target = planet.position
 	hp_max = hp
 
 func _process(delta):
@@ -31,9 +31,9 @@ func set_target_to_nearest():
 		#check for a tower that is nearer
 		for k in towers:
 			if (k.global_position-position).length() < (closest-position).length(): #is the tower k nearer the the current clostest
-				closest=k.global_position
-	target=closest
-			
+				closest = k.global_position
+	target = closest
+	
 func receive_damage(amount):
 	$HpBar.visible = true
 	hp = hp - amount
@@ -43,8 +43,6 @@ func receive_damage(amount):
 	if hp <= 0:
 		hp=0
 		die()
-		return
-
 	emit_signal("damage_dealt", amount)
 
 func die():
