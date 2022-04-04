@@ -20,11 +20,11 @@ var _PROJECTILE_DATA = {
 	Projectiles.SNIPER: {
 		"damage":200,
 		"speed":500,
-		"scene_path": "res://scenes/objects/BaseProjectile/xxx/xxx.tscn",
+		"scene_path": "res://scenes/objects/BaseProjectile/sniper/sniper.tscn",
 	},
 	Projectiles.FLAK: {
 		"damage":50,
 		"speed":20,
-		"scene_path": "res://scenes/objects/BaseProjectile/xxx/xxx.tscn",
+		"scene_path": "res://scenes/objects/BaseProjectile/flak/flak.tscn",
 	},
 }
