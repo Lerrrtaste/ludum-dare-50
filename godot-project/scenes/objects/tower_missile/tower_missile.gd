@@ -14,5 +14,5 @@ func shoot():
 	inst.position = global_position
 	var direction = target.position - global_position
 	direction += (target.speed*target.direction.normalized())*4 # add expected movement until impact
-	inst.start(direction, false)
+	inst.start(target, false)
 	$SprTarget.global_position = global_position+direction

@@ -8,6 +8,7 @@ enum Towers {
 	FLAK,
 	MISSILE,
 	SNIPER,
+	LASER
 }
 
 var _TOWER_DATA = {
@@ -81,6 +82,17 @@ var _TOWER_DATA = {
 		"firerate": 5,
 	},Towers.MISSILE: {
 		"name": "Missile Turret",
+		"icon_path": "res://scenes/objects/tower_missile/missile_tower_icon.png",
+		"scene_path": "res://scenes/objects/tower_missile/TowerMissile.tscn",
+		"resource": false,
+		"unlock_year": 3,
+		"hp": 100,
+		"cost": 20,
+		"range": 75,
+		"firerate": 3,
+	},
+	Towers.LASER: {
+		"name": "Laser Turret",
 		"icon_path": "res://scenes/objects/tower_missile/missile_tower_icon.png",
 		"scene_path": "res://scenes/objects/tower_missile/TowerMissile.tscn",
 		"resource": false,
