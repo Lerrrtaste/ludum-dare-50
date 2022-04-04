@@ -26,12 +26,15 @@ func _process(delta):
 
 		if "projectile" in tower_data and tower_data.projectile > 0:
 			if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
+				$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
+				$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
+				print($SprTower.frame)
 				shoot()
 				shoot_last = OS.get_ticks_msec()
 
 
 func shoot():
-	print("Base shooting")
+	print("Base shooting (not good!)")
 
 
 func load_tower(p_tower_id):
@@ -72,8 +75,8 @@ func update_auto_target():
 	
 	if closest:
 		target = closest.get_parent()
-		$SprBarrel.play("active")
-		$SprTower.play("active")
+		$SprBarrel.animation = "active"
+		$SprTower.animation = "active"
 		$SprTarget.visible = true
 	else:
 		$SprBarrel.play("idle")

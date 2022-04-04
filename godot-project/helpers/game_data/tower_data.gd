@@ -47,7 +47,7 @@ var _TOWER_DATA = {
 	},
 	Towers.MG: {
 		"name": "Machine Gun Turret",
-		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
+		"icon_path": "res://scenes/objects/tower_mg/tower_mg_icon.png",
 		"scene_path": "res://scenes/objects/tower_mg/TowerMg.tscn",
 		"resource": false,
 		"unlock_year": 0,
@@ -59,7 +59,7 @@ var _TOWER_DATA = {
 	},
 	Towers.FLAK: {
 		"name": "Flak Turret",
-		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
+		"icon_path": "res://scenes/objects/tower_flak/tower_flak_icon.png",
 		"scene_path": "res://scenes/objects/tower_flak/TowerFlak.tscn",
 		"resource": false,
 		"unlock_year": 2,
@@ -74,7 +74,7 @@ var _TOWER_DATA = {
 		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
 		"scene_path": "res://scenes/objects/tower_rocket/TowerRocket.tscn",
 		"resource": false,
-		"unlock_year": 1,
+		"unlock_year": 50,
 		"hp": 100,
 		"cost": 20,
 		"range": 75,
