@@ -2,8 +2,8 @@ extends GDScript
 
 enum Enemies {
 	DEFAULT = -1,
-	METEOR1,
-	METEOR2,
+	METEOR,
+	METEORBIG,
 	UFO,
 }
 
@@ -23,19 +23,19 @@ var _ENEMY_DATA = {
 		"hp": 30,
 		"fire_rate": 0.0, # in sec
 	},
-	Enemies.METEOR1: {
+	Enemies.METEOR: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 20,
 		"speed": 20,
 		"hp": 30,
 		"scene_path": "res://scenes/objects/base_enemy/meteor/Meteor.tscn",
 	},
-	Enemies.METEOR2: {
+	Enemies.METEORBIG: {
 		"damage_type": DamageType.IMPACT,
 		"damage_amount": 40,
 		"speed": 50,
 		"hp": 30,
-		"scene_path": "res://scenes/objects/base_enemy/meteor/Meteor.tscn",
+		"scene_path": "res://scenes/objects/base_enemy/meteor_big/Meteor_big.tscn",
 	},
 	Enemies.UFO: {
 		"damage_type": DamageType.IMPACT,

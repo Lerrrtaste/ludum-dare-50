@@ -17,37 +17,37 @@ var _WAVE_DATA = {
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
-				"id": Enemies.METEOR1,
-				"count": 1,
+				"id": Enemies.METEORBIG,
+				"count": 8,
 				"timestamp": 0.1
 			},
 			{
-				"id": Enemies.METEOR1,
-				"count": 1,
+				"id": Enemies.METEORBIG,
+				"count": 4,
 				"timestamp": 0.2
 			},
 			{
-				"id": Enemies.METEOR1,
-				"count": 2,
+				"id": Enemies.METEORBIG,
+				"count": 20,
 				"timestamp": 0.3
 			},
 			{
-				"id": Enemies.METEOR2,
-				"count": 1,
+				"id": Enemies.METEORBIG,
+				"count": 2,
 				"timestamp": 0.4
 			},
 			{
-				"id": Enemies.METEOR2,
-				"count": 1,
+				"id": Enemies.METEORBIG,
+				"count": 5,
 				"timestamp": 0.5
 			},
 			{
-				"id": Enemies.METEOR2,
+				"id": Enemies.METEORBIG,
 				"count": 2,
 				"timestamp": 0.7
 			},
 			{
-				"id": Enemies.METEOR1,
+				"id": Enemies.METEORBIG,
 				"count": 2,
 				"timestamp": 0.9
 			},

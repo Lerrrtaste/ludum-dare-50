@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/objects/base_enemy/meteor/Meteor.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 7.07107
+radius = 6.0
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 1 )
