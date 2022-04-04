@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/tower_base.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg1.png" type="Texture" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://scenes/objects/tower_base/tower_target.png" type="Texture" id=4]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel3.png" type="Texture" id=5]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel1.png" type="Texture" id=6]
+[ext_resource path="res://scenes/objects/tower_base/snd_tower_damaged.mp3" type="AudioStream" id=7]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel2.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg2.png" type="Texture" id=9]
+[ext_resource path="res://ui/shop/snd_tower_built.mp3" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -82,3 +84,11 @@ shape = SubResource( 2 )
 
 [node name="SprTarget" type="Sprite" parent="."]
 texture = ExtResource( 4 )
+
+[node name="AudioDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="AudioPlaced" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = 14.546
+autoplay = true

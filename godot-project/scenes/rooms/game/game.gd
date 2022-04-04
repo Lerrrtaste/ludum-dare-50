@@ -155,3 +155,7 @@ func _on_BtnShop_pressed():
 
 func _on_ContainerShop_hide():
 	$BtnShop.visible = true
+
+
+func _on_AudioIntro_finished():
+	$AudioLoop.play()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snd_tower_built.mp3-5a86aa18fcd4196a785dcda8e358ba9c.mp3str"
+
+[deps]
+
+source_file="res://ui/shop/snd_tower_built.mp3"
+dest_files=[ "res://.import/snd_tower_built.mp3-5a86aa18fcd4196a785dcda8e358ba9c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

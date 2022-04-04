@@ -45,5 +45,7 @@ func _on_BtnBuy_pressed():
 	var inst = TowerPreview.instance()
 	planet.add_child(inst)
 	inst.set_tower_id(tower_id)
+	#inst.connect("tower_preview_placed", self, "_on_TowerPreview_placed")
 	emit_signal("tower_selected", tower_id)
+
 

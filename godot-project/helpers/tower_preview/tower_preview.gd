@@ -36,3 +36,4 @@ func _unhandled_input(event):
 			inst.position = planet.get_outer_pos(event.position)
 			inst.rotation_degrees = rad2deg((event.position - planet.position).angle())+90
 			planet.add_child(inst)
+			emit_signal("tower_preview_placed")

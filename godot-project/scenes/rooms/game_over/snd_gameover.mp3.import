@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snd_gameover.mp3-56a9df9e07f557a9d808e5844f38c8e4.mp3str"
+
+[deps]
+
+source_file="res://scenes/rooms/game_over/snd_gameover.mp3"
+dest_files=[ "res://.import/snd_gameover.mp3-56a9df9e07f557a9d808e5844f38c8e4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

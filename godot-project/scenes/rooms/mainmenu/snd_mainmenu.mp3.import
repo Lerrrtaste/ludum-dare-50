@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snd_mainmenu.mp3-c7ef3b8a2f5e6a0da6bc38d606e3990e.mp3str"
+
+[deps]
+
+source_file="res://scenes/rooms/mainmenu/snd_mainmenu.mp3"
+dest_files=[ "res://.import/snd_mainmenu.mp3-c7ef3b8a2f5e6a0da6bc38d606e3990e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

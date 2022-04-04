@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/rooms/game/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/planet/Planet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/shop/Shop.tscn" type="PackedScene" id=3]
 [ext_resource path="res://helpers/background/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/themes/theme_default.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/rooms/game/snd_bg.mp3" type="AudioStream" id=6]
+[ext_resource path="res://scenes/rooms/game/snd_bg_intro.mp3" type="AudioStream" id=7]
 
 [node name="Game" type="CanvasLayer" groups=["game"]]
 script = ExtResource( 1 )
@@ -76,5 +78,13 @@ visible = false
 anchor_top = 1.0
 margin_top = -75.0
 
+[node name="AudioIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="AudioLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
 [connection signal="pressed" from="BtnShop" to="." method="_on_BtnShop_pressed"]
 [connection signal="hide" from="ContainerShop" to="." method="_on_ContainerShop_hide"]
+[connection signal="finished" from="AudioIntro" to="." method="_on_AudioIntro_finished"]

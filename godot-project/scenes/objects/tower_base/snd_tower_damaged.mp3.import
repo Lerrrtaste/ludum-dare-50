@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/snd_tower_damaged.mp3-20b6eaa25fe00bde2080b641d7938830.mp3str"
+
+[deps]
+
+source_file="res://scenes/objects/tower_base/snd_tower_damaged.mp3"
+dest_files=[ "res://.import/snd_tower_damaged.mp3-20b6eaa25fe00bde2080b641d7938830.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
