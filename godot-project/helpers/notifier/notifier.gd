@@ -33,10 +33,12 @@ func notify_info(title, message = ""):
 
 
 func notify_game(title, message = ""):
+	$AudioGame.play()
 	_spawn_notification(TexturePanelYellow, title, message, 4.0)
 
 
 func notify_error(title, message = ""):
+	$AudioError.play()
 	_spawn_notification(TexturePanelRed, title, message, 5.0)
 
 

@@ -8,7 +8,8 @@ enum Towers {
 	FLAK,
 	MISSILE,
 	SNIPER,
-	LASER
+	LASER,
+	NUKE
 }
 
 var _TOWER_DATA = {
@@ -107,5 +108,17 @@ var _TOWER_DATA = {
 		"cost": 20,
 		"range": 75,
 		"firerate": 3,
+	},
+	Towers.NUKE: {
+		"name": "Nuke",
+		"icon_path": "res://scenes/objects/tower_nuke/tower_nuke1.png",
+		"scene_path": "res://scenes/objects/tower_nuke/TowerNuke.tscn",
+		"resource": false,
+		"unlock_year": 1,
+		"unlock_cost": 500,
+		"hp": 200,
+		"cost": 20,
+		"range": 150,
+		"firerate": 5,
 	},
 }

@@ -33,6 +33,7 @@ func set_tower_id(p_tower_id, unlocked):
 
 
 func _on_BtnBuy_pressed():
+	$AudioClick.play()
 	# start tower preview
 	if not is_unlocked:
 		if game.money >= GameData.get_tower_property(tower_id, "unlock_cost"):
