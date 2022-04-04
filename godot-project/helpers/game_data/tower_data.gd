@@ -6,7 +6,8 @@ enum Towers {
 	RESOURCE_EXTRACTOR,
 	MG,
 	FLAK,
-	ROCKET,
+	MISSILE,
+	SNIPER,
 }
 
 var _TOWER_DATA = {
@@ -54,8 +55,7 @@ var _TOWER_DATA = {
 		"hp": 50,
 		"cost": 50,
 		"range": 100,
-		"projectile": 1,
-		"firerate": .3,
+		"firerate": .25,
 	},
 	Towers.FLAK: {
 		"name": "Flak Turret",
@@ -66,19 +66,27 @@ var _TOWER_DATA = {
 		"hp": 100,
 		"cost": 100,
 		"range": 75,
-		"projectile": 2,
 		"firerate": .8,
 	},
-	Towers.ROCKET: {
-		"name": "Rocket Turret",
-		"icon_path": "res://scenes/objects/tower_base/defense_tower_placeholder.png",
-		"scene_path": "res://scenes/objects/tower_rocket/TowerRocket.tscn",
+	Towers.SNIPER: {
+		"name": "Sniper Turret",
+		"icon_path": "res://scenes/objects/tower_sniper/sniper_tower_icon.png",
+		"scene_path": "res://scenes/objects/tower_sniper/TowerSniper.tscn",
 		"resource": false,
-		"unlock_year": 50,
+		"unlock_year": 2,
+		"hp": 50,
+		"cost": 50,
+		"range": 200,
+		"firerate": 1,
+	},Towers.MISSILE: {
+		"name": "Missile Turret",
+		"icon_path": "res://scenes/objects/tower_missile/missile_tower_icon.png",
+		"scene_path": "res://scenes/objects/tower_missile/TowerMissile.tscn",
+		"resource": false,
+		"unlock_year": 3,
 		"hp": 100,
 		"cost": 20,
 		"range": 75,
-		"projectile": 3,
-		"firerate": .5,
+		"firerate": 3,
 	},
 }

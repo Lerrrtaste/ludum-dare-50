@@ -26,8 +26,8 @@ func _process(delta):
 
 		if "projectile" in tower_data and tower_data.projectile > 0:
 			if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
-				$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
-				$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
+				#$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
+				#$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
 				print($SprTower.frame)
 				shoot()
 				shoot_last = OS.get_ticks_msec()
@@ -46,6 +46,9 @@ func load_tower(p_tower_id):
 		$AreaRange/CollisionShape2D.shape.radius = tower_data.range
 		$AreaRange.connect("area_entered", self, "_on_AreaRange_area_entered")
 		$AreaRange.connect("area_exited", self, "_on_AreaRange_area_exited")
+	
+	$SprBarrel.frames.set_animation_speed("active", 1/GameData.get_tower_property(tower_id, "firerate"))
+	$SprTower.frames.set_animation_speed("active", 1/GameData.get_tower_property(tower_id, "firerate"))
 	
 	set_process(true)
 
@@ -75,8 +78,8 @@ func update_auto_target():
 	
 	if closest:
 		target = closest.get_parent()
-		$SprBarrel.animation = "active"
-		$SprTower.animation = "active"
+		$SprBarrel.play("active")
+		$SprTower.play("active")
 		$SprTarget.visible = true
 	else:
 		$SprBarrel.play("idle")

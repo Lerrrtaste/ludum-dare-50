@@ -19,7 +19,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "active",
-"speed": 5.0
+"speed": 60.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -27,12 +27,12 @@ animations = [ {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 60.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "active",
-"speed": 5.0
+"speed": 60.0
 } ]
 
 [sub_resource type="CircleShape2D" id=1]
