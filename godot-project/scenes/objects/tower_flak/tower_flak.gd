@@ -8,7 +8,7 @@ func _ready():
 	.load_tower(TOWER_ID)
 
 func shoot():
-	var inst = GameData.get_projectile_property(GameData._projectile_ids.FLAK, "scene_path").instance()
+	var inst = Projectile.instance()
 	game.add_child(inst)
 	inst.position = global_position
 	var direction = target.position - global_position

@@ -21,14 +21,13 @@ func _process(delta):
 			target = null
 			update_auto_target()
 			return
-		$SprBarrel.rotation = (target.position - global_position).angle() + deg2rad(90) - rotation
+		$SprBarrel.rotation = (target.position - global_position).angle() -rotation+ deg2rad(90)
 		
 		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
-			#$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
-			#$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
 			print($SprTower.frame)
 			shoot()
 			shoot_last = OS.get_ticks_msec()
+			update_auto_target()
 
 
 func shoot():
@@ -70,6 +69,8 @@ func update_auto_target():
 	var closest
 	for i in in_range:
 		if not i or not i.get_parent().has_method("receive_damage"):
+			continue
+		if abs((i.position-position).angle()) - rotation > 40:
 			continue
 		if not closest or closest.get_parent().global_position-position > i.get_parent().global_position-position:
 			closest = i

@@ -42,6 +42,9 @@ animation = "idle"
 offset = Vector2( 0, -8 )
 
 [node name="SprBarrel" type="AnimatedSprite" parent="." index="7"]
+position = Vector2( 2, -7 )
 frames = SubResource( 2 )
 animation = "idle"
-offset = Vector2( 0, -8 )
+offset = Vector2( -2, -1 )
+
+[node name="Tween" type="Tween" parent="." index="8"]

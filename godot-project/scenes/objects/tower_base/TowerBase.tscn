@@ -55,9 +55,10 @@ frames = SubResource( 4 )
 animation = "idle"
 offset = Vector2( 0, -8 )
 
-[node name="AreaBody" type="Area2D" parent="."]
+[node name="AreaBody" type="Area2D" parent="." groups=["towers"]]
 collision_layer = 2
 collision_mask = 0
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBody"]
 shape = SubResource( 1 )
@@ -74,6 +75,7 @@ value = 100.0
 [node name="AreaRange" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRange"]
 shape = SubResource( 2 )
