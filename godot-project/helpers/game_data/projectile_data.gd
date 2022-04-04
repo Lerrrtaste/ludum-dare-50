@@ -5,6 +5,7 @@ enum Projectiles {
 	MG,
 	SNIPER,
 	FLAK,
+	MISSILE,
 }
 
 var _PROJECTILE_DATA = {
@@ -30,6 +31,6 @@ var _PROJECTILE_DATA = {
 		Projectiles.MISSILE: {
 		"damage":50,
 		"speed":20,
-		"scene_path": "res://scenes/objects/BaseProjectile/flak/flak.tscn",
+		"scene_path": "res://scenes/objects/BaseProjectile/missile/missile.tscn",
 	},
 }
