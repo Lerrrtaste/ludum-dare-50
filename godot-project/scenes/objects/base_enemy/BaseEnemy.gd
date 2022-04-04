@@ -19,6 +19,19 @@ func _ready():
 func _process(delta):
 	pass
 
+func set_target_to_nearest():
+	var closest=Vector2(999999,999999) #fist we assume that the planet is closets
+	var towers=get_tree().get_nodes_in_group("towers")
+	if towers.empty():
+		#target planet when no towers available
+		closest=planet.position
+	else:
+		#check for a tower that is nearer
+		for k in towers:
+			if (k.global_position-position).length() < (closest-position).length(): #is the tower k nearer the the current clostest
+				closest=k.global_position
+	target=closest
+			
 func receive_damage(amount):
 	hp = hp - amount
 

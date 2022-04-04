@@ -40,7 +40,7 @@ radius = 17.0294
 
 [sub_resource type="CircleShape2D" id=2]
 
-[node name="TowerBase" type="Node2D"]
+[node name="TowerBase" type="Node2D" groups=["towers"]]
 script = ExtResource( 1 )
 
 [node name="TmpSprTower" type="AnimatedSprite" parent="."]
