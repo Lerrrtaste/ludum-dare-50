@@ -31,7 +31,8 @@ func _on_Area2D_area_entered(area):
 		if area.get_parent().has_method("receive_damage"):
 			area.get_parent().receive_damage(damage)
 			var enemies= area_range.get_overlapping_areas()
-			SoundPlayer.play("Explosion 5.wav")
+			var randint=(randi()%5)+1
+			SoundPlayer.play("Explosion %s.wav"%randint)
 			for j in enemies:
 				if j.get_parent().has_method("receive_damage"):
 					j.get_parent().receive_damage(damage/3)

@@ -16,7 +16,10 @@ signal died
 
 func _ready():
 	planet = get_tree().get_nodes_in_group("planet")[0]
-	direction = (global_position - planet.global_position).normalized().rotated((deg2rad(randi()%20) -10)) #Vector2(randi(), randi()).normalized() #random start speed
+	if (global_position - planet.global_position).length() >100:
+		direction = (global_position - planet.global_position).normalized().rotated((deg2rad(randi()%20) -10)) #Vector2(randi(), randi()).normalized() #random start speed
+	else:
+		direction=Vector2((randi()%100)-50,(randi()%100)-50).normalized()
 	target = planet.position
 	hp_max = hp
 
