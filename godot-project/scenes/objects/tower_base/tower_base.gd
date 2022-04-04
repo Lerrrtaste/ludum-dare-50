@@ -8,6 +8,7 @@ var tower_id = -1
 var hp = -1
 
 var target
+var in_range := []
 var shoot_last = 0
 
 
@@ -17,7 +18,7 @@ func _ready():
 
 func _process(delta):
 	if target:
-		pass#$SprTarget.global_position = target.global_position
+		pass#TODO rotate barrel target.global_position-SprTarget.global_position
 
 	if "projectile" in tower_data and tower_data.projectile > 0 and target:
 		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
@@ -55,12 +56,24 @@ func receive_damage(damage:int):
 		queue_free()
 
 
-func _on_AreaRange_area_entered(area):
-	if not target and area.get_parent().has_method("receive_damage"):
-		target = area.get_parent()
+func update_auto_target():
+	in_range = $AreaRange.get_overlapping_areas()
+	
+	var closest
+	for i in in_range:
+		if not i or i.get_parent().has_method("receive_damage"):
+			continue
+		if not closest or closest.get_parent().global_position-position > i.get_parent().global_position-position:
+			closest = i
+	
+	if closest:
+		target = closest.get_parent()
 		$SprTarget.visible = true
-
-func _on_AreaRange_area_exited(area):
-	if target and target == area.get_parent():
-		target = null
+	else:
 		$SprTarget.visible = false
+
+func _on_AreaRange_area_entered(area):
+	update_auto_target()
+	
+func _on_AreaRange_area_exited(area):
+	update_auto_target()
