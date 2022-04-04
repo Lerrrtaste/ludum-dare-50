@@ -29,8 +29,8 @@ var _PROJECTILE_DATA = {
 		"scene_path": "res://scenes/objects/BaseProjectile/flak/flak.tscn",
 	},
 		Projectiles.MISSILE: {
-		"damage":50,
-		"speed":20,
+		"damage":40,
+		"speed":5,
 		"scene_path": "res://scenes/objects/BaseProjectile/missile/missile.tscn",
 	},
 }

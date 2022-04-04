@@ -1,6 +1,6 @@
 extends Node2D
 
-var direction
+var direction=Vector2(0,0)
 var damage	#damage the projectile draws
 var speed	#speed of then rpjectile
 var target	#target parameter only needed for homing projectiles

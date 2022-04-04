@@ -85,7 +85,7 @@ var _TOWER_DATA = {
 		"icon_path": "res://scenes/objects/tower_missile/missile_tower_icon.png",
 		"scene_path": "res://scenes/objects/tower_missile/TowerMissile.tscn",
 		"resource": false,
-		"unlock_year": 3,
+		"unlock_year": 1,
 		"hp": 100,
 		"cost": 20,
 		"range": 75,

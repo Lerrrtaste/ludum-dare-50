@@ -18,9 +18,11 @@ func start(ptarget, pfired_by_enemy:bool):
 #	pass
 
 func _process(delta):
-	direction=target.global_position-position
+	speed=speed+speed*delta
+	if is_instance_valid(target):
+		direction=(target.global_position-position).normalized()
 	position=(position+(direction*speed*delta))
 	#autodestroy after 10 sec
 	counter = counter+delta
-	if counter>15.0:
+	if counter>25.0:
 		queue_free()
