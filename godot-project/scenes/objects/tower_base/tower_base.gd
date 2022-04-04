@@ -1,6 +1,5 @@
 extends Node2D
 
-var ProjectileClass = preload("res://scenes/objects/projectile/Projectile.tscn")
 onready var game = get_tree().get_nodes_in_group("game")[0]
 
 var tower_data
@@ -23,14 +22,13 @@ func _process(delta):
 			update_auto_target()
 			return
 		$SprBarrel.rotation = (target.position - global_position).angle() + deg2rad(90) - rotation
-
-		if "projectile" in tower_data and tower_data.projectile > 0:
-			if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
-				#$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
-				#$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
-				print($SprTower.frame)
-				shoot()
-				shoot_last = OS.get_ticks_msec()
+		
+		if OS.get_ticks_msec() - shoot_last >= tower_data.firerate*1000:
+			#$SprTower.frame = ($SprTower.frame + 1) % $SprTower.frames.get_frame_count("active")
+			#$SprBarrel.frame += ($SprBarrel.frame + 1) % $SprBarrel.frames.get_frame_count("active")
+			print($SprTower.frame)
+			shoot()
+			shoot_last = OS.get_ticks_msec()
 
 
 func shoot():

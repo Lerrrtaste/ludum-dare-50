@@ -84,7 +84,7 @@ func _get_property(data_dict, key, property):
 		assert(false)
 		
 	if not property in data_dict[key]:
-		Notifier.notify_debug("Property does not exist", property)
+		#Notifier.notify_debug("Property does not exist", property)
 		return data_dict[-1][property]
 
 	return data_dict[key][property]
