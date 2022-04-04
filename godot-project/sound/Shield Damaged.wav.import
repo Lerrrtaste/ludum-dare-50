@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Shield Damaged.wav-7146dcbe0ab2a232acd5e60602dda114.sample"
+
+[deps]
+
+source_file="res://sound/Shield Damaged.wav"
+dest_files=[ "res://.import/Shield Damaged.wav-7146dcbe0ab2a232acd5e60602dda114.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

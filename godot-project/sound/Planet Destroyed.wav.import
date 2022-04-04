@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Planet Destroyed.wav-da61f7e65e6cfb04c8ad8fbf398e1da4.sample"
+
+[deps]
+
+source_file="res://sound/Planet Destroyed.wav"
+dest_files=[ "res://.import/Planet Destroyed.wav-da61f7e65e6cfb04c8ad8fbf398e1da4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0
