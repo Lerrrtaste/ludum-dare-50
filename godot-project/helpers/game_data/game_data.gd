@@ -4,6 +4,10 @@ var EnemyScene = load("res://helpers/game_data/enemy_data.gd")
 var _enemy_data
 var _enemy_ids
 
+var ProjectileScene = load("res://helpers/game_data/projectile_data.gd")
+var _projectile_data
+var _projectile_ids
+
 var TowerScene = load("res://helpers/game_data/tower_data.gd")
 var _tower_data
 var _tower_ids
@@ -16,6 +20,10 @@ func _ready():
 	var Enemies = EnemyScene.new()
 	_enemy_ids = Enemies.Enemies
 	_enemy_data = Enemies._ENEMY_DATA
+	
+	var Projectiles = ProjectileScene.new()
+	_projectile_ids = Projectiles.Projectiles
+	_projectile_data = Projectiles._PROJECTILE_DATA
 
 	var Towers = TowerScene.new()
 	_tower_ids = Towers.Towers
@@ -36,6 +44,13 @@ func get_enemy_dict(enemy_id) -> Dictionary:
 func get_enemy_property(enemy_id, property_name):
 	return _get_property(_enemy_data, enemy_id, property_name)
 
+# Projectile Data
+
+func get_projectile_dict(projectile_id) -> Dictionary:
+	return _get_dict(_projectile_data, projectile_id)
+
+func get_projectile_property(projectile_id, property_name):
+	return _get_property(_projectile_data, projectile_id, property_name)
 
 # Tower Data
 
@@ -69,7 +84,7 @@ func _get_property(data_dict, key, property):
 		assert(false)
 		
 	if not property in data_dict[key]:
-		Notifier.notify_debug("Property does not exist", key)
+		Notifier.notify_debug("Property does not exist", property)
 		return data_dict[-1][property]
 
 	return data_dict[key][property]

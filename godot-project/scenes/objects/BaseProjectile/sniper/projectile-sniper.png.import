@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile-rocket.png-fc2d36c8282d75fec35adcd22e633840.stex"
+path="res://.import/projectile-sniper.png-ab8f07e3105eb96ddaf2ddd21dca956c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/objects/projectile/projectile-rocket.png"
-dest_files=[ "res://.import/projectile-rocket.png-fc2d36c8282d75fec35adcd22e633840.stex" ]
+source_file="res://scenes/objects/BaseProjectile/sniper/projectile-sniper.png"
+dest_files=[ "res://.import/projectile-sniper.png-ab8f07e3105eb96ddaf2ddd21dca956c.stex" ]
 
 [params]
 

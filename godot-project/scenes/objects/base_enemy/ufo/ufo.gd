@@ -23,11 +23,11 @@ func _process(delta):
 	#shoot at projectile
 	counter = counter + delta
 	if counter > fire_rate:
-		var ProjectileScene = load("res://scenes/objects/projectile/Projectile.tscn")
+		var ProjectileScene = load("res://scenes/objects/BaseProjectile/mg/mg.tscn")
 		var projectile=ProjectileScene.instance()
 		game.add_child(projectile)
 		projectile.position=position
-		projectile.start_direction(target-position,1,true)
+		projectile.start(target-position,true)
 		counter=0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
