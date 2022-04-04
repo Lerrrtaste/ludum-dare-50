@@ -5,6 +5,7 @@ enum Enemies {
 	METEOR,
 	METEORBIG,
 	UFO,
+	UFOBIG,
 }
 
 enum DamageType {
@@ -44,5 +45,13 @@ var _ENEMY_DATA = {
 		"hp": 30,
 		"fire_rate": 2.0, # in sec
 		"scene_path": "res://scenes/objects/base_enemy/ufo/ufo.tscn",
+	},
+	Enemies.UFOBIG: {
+		"damage_type": DamageType.IMPACT,
+		"damage_amount": 60,
+		"speed": 50,
+		"hp": 60,
+		"fire_rate": 2.0, # in sec
+		"scene_path": "res://scenes/objects/base_enemy/ufo_big/ufo_big.tscn",
 	},
 }

@@ -38,6 +38,10 @@ func fetch_data_from_dic(id_in_dict):
 		area.set_collision_mask_bit(1,false)
 
 func _on_Area2D_area_entered(area):
-		if area.get_parent().has_method("receive_damage"):
-			area.get_parent().receive_damage(damage)
+		if area.has_method("receive_damage"): #if it is a shiled
+			area.receive_damage(damage)
 			queue_free()
+		else:
+			if area.get_parent().has_method("receive_damage"): #normal entity
+				area.get_parent().receive_damage(damage)
+				queue_free()

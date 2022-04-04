@@ -58,19 +58,24 @@ var _WAVE_DATA = {
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
-				"id": Enemies.UFO,
+				"id": Enemies.UFOBIG,
 				"count": 1,
 				"timestamp": 0.1
 			},
 			{
-				"id": Enemies.UFO,
+				"id": Enemies.UFOBIG,
 				"count": 3,
 				"timestamp": 0.3
 			},
 			{
-				"id": Enemies.UFO,
+				"id": Enemies.UFOBIG,
 				"count": 8,
 				"timestamp": 0.6
+			},
+			{
+				"id": Enemies.UFOBIG,
+				"count": 8,
+				"timestamp": 0.8
 			},
 		]
 	}
