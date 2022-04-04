@@ -6,10 +6,10 @@
 [ext_resource path="res://scenes/objects/tower_base/tower_target.png" type="Texture" id=4]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel3.png" type="Texture" id=5]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/objects/tower_base/snd_tower_damaged.mp3" type="AudioStream" id=7]
+[ext_resource path="res://sound/snd_tower_damaged.wav" type="AudioStream" id=7]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg_barrel2.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg2.png" type="Texture" id=9]
-[ext_resource path="res://scenes/objects/tower_base/snd_tower_built.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sound/snd_tower_built.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
