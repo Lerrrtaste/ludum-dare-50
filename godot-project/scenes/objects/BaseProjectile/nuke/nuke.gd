@@ -1,10 +1,20 @@
 extends "res://scenes/objects/BaseProjectile/BaseProjectile.gd"
 var id_in_dict=GameData._projectile_ids.NUKE
+<<<<<<< HEAD
 onready var area_range=$range
 onready var audio=$detonate
+=======
+onready var Range=$range
+<<<<<<< HEAD
+onready var audio=$AudioStreamPlayer
+>>>>>>> af22596 (Effects)
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+=======
+
+var Explosion = preload("res://helpers/explosion/Explosion.tscn")
+>>>>>>> 5175a77 (Effects)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,5 +35,9 @@ func _on_Area2D_area_entered(area):
 			for j in enemies:
 				if j.get_parent().has_method("receive_damage"):
 					j.get_parent().receive_damage(damage/3)
+			var inst = Explosion.instance()
+			get_parent().add_child(inst)
+			inst.global_position = global_position
+			
 			queue_free()
 			

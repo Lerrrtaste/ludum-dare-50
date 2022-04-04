@@ -1,5 +1,7 @@
 extends Node2D
 
+var impact_part = preload("res://helpers/particles/ImpactParticle.tscn") 
+
 var direction=Vector2(0,0)
 var damage	#damage the projectile draws
 var speed	#speed of then rpjectile
@@ -40,8 +42,15 @@ func fetch_data_from_dic(id_in_dict):
 func _on_Area2D_area_entered(area):
 		if area.has_method("receive_damage"): #if it is a shiled
 			area.receive_damage(damage)
+			var inst = impact_part.instance()
+			get_parent().add_child(inst)
+			inst.global_position = global_position
+			
 			queue_free()
 		else:
 			if area.get_parent().has_method("receive_damage"): #normal entity
 				area.get_parent().receive_damage(damage)
+				var inst = impact_part.instance()
+				get_parent().add_child(inst)
+				inst.global_position = global_position
 				queue_free()

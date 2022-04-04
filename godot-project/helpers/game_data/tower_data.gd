@@ -54,12 +54,12 @@ var _TOWER_DATA = {
 		"icon_path": "res://scenes/objects/tower_mg/tower_mg_icon.png",
 		"scene_path": "res://scenes/objects/tower_mg/TowerMg.tscn",
 		"resource": false,
-		"unlock_cost": 1,
+		"unlock_cost": 250,
 		"unlock_year": 0,
 		"hp": 50,
 		"cost": 50,
 		"range": 100,
-		"firerate": .25,
+		"firerate": .4,
 	},
 	Towers.FLAK: {
 		"name": "Flak",
@@ -107,7 +107,7 @@ var _TOWER_DATA = {
 		"hp": 500,
 		"cost": 20,
 		"range": 75,
-		"firerate": 3,
+		"firerate": .2,
 	},
 	Towers.NUKE: {
 		"name": "Nuke",

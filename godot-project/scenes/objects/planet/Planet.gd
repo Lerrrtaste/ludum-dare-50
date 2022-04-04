@@ -13,7 +13,7 @@ func _ready():
 
 func receive_damage(amount):
 	hp=hp-amount;
-
+	$AnimationPlayer.play("damage")
 	# die
 	if hp <= 0:
 		hp=0

@@ -12,6 +12,6 @@ func shoot():
 	game.add_child(inst)
 	inst.position = global_position
 	var direction = target.position - global_position
-	direction += (target.speed*target.direction.normalized())*4 # add expected movement until impact
+	direction += (target.speed*target.direction.normalized())*.1 # add expected movement until impact
 	inst.start(direction, false)
 	$SprTarget.global_position = global_position+direction

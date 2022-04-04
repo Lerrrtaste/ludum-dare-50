@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var game = get_tree().get_nodes_in_group("game")[0]
-
+var death_part = preload("res://helpers/particles/DeathParticle.tscn") 
 var tower_data
 var tower_id = -1
 var hp = -1
@@ -53,11 +53,14 @@ func load_tower(p_tower_id):
 func receive_damage(damage:int):
 	hp -= damage
 	$AudioDamage.play()
-	
+	$AnimationPlayer.play("damage")
 	$HpBar.visible = true
 	$HpBar.value = (float(hp)/float(tower_data.hp))*100.0
 	
 	if hp <= 0:
+		var inst = death_part.instance()
+		get_parent().add_child(inst)
+		inst.global_position = global_position
 		emit_signal("tower_destroyed")
 		set_process(false)
 		visible = false

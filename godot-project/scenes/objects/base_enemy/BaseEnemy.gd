@@ -1,5 +1,7 @@
 extends Node2D
 
+var death_part = preload("res://helpers/particles/DeathParticle.tscn") 
+
 var planet
 var target
 var hp
@@ -39,8 +41,12 @@ func receive_damage(amount):
 	hp = hp - amount
 	$HpBar.value = (float(hp)/float(hp_max))
 	print("hp",hp," hpmax",hp_max, " value", $HpBar.value)
+	$AnimationPlayer.play("damage")
 	# die
 	if hp <= 0:
+		var inst = death_part.instance()
+		get_parent().add_child(inst)
+		inst.global_position = global_position
 		hp=0
 		die()
 	emit_signal("damage_dealt", amount)
