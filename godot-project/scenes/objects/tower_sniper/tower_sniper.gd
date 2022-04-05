@@ -22,6 +22,7 @@ func shoot():
 	$Tween.interpolate_property(self, "line_a", 1.0, 0.0, 0.4, Tween.TRANS_QUAD,Tween.EASE_OUT)
 	$Tween.start()
 	target.receive_damage(GameData.get_tower_property(TOWER_ID,"damage"))
+	SoundPlayer.play("sniper.wav")
 
 func _process(delta):
 	._process(delta)
