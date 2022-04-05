@@ -38,3 +38,7 @@ func _unhandled_input(event):
 			planet.add_child(inst)
 			get_tree().get_nodes_in_group("game")[0]._show_popup("-"+str(GameData.get_tower_property(tower_id, "cost"))+" Energy",global_position)
 			emit_signal("tower_preview_placed")
+			
+			visible = false
+			set_process(false)
+			queue_free()

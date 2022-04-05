@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/objects/tower_base/tower_base.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/tower_mg/tower_mg1.png" type="Texture" id=2]
@@ -44,6 +44,21 @@ animations = [ {
 "speed": 60.0
 } ]
 
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "damage"
 tracks/0/type = "value"
@@ -53,10 +68,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 0.307786, 0.148651 ),
+"times": PoolRealArray( 0, 0.1, 0.9 ),
+"transitions": PoolRealArray( 1, 0.307786, 0.148651 ),
 "update": 0,
-"values": [ Color( 0.631373, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.631373, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="TowerBase" type="Node2D" groups=["towers"]]
@@ -111,6 +126,8 @@ volume_db = 0.09
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 6 )
 anims/damage = SubResource( 5 )
 
 [node name="AudioShoot" type="AudioStreamPlayer" parent="."]

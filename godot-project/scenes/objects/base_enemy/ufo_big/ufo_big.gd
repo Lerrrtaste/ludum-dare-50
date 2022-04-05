@@ -8,6 +8,7 @@ const min_planet_dist = 60
 var counter=0
 var pos_old=Vector2(0,0)
 var target_planet_dist=min_planet_dist+(randi()%60)
+var shield = 100
 
 func _ready():
 	direction= Vector2(randi(), randi()).normalized() #random start speed
@@ -35,7 +36,7 @@ func _process(delta):
 	#shoot at projectile
 	counter = counter + delta
 	if counter > fire_rate:
-		var ProjectileScene = load("res://scenes/objects/BaseProjectile/mg/mg.tscn")
+		var ProjectileScene = load("res://scenes/objects/BaseProjectile/laser/laser.tscn")
 		var projectile=ProjectileScene.instance()
 		game.add_child(projectile)
 		projectile.position=position

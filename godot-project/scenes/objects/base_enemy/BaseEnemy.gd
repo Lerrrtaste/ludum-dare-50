@@ -53,8 +53,9 @@ func receive_damage(amount):
 		get_parent().add_child(inst)
 		inst.global_position = global_position
 		hp=0
-		get_tree().get_nodes_in_group("game")[0]._show_popup("+"+str(25)+" Energy",global_position)
-		get_tree().get_nodes_in_group("game")[0].money += 25
+		var money = randi()%50+51
+		get_tree().get_nodes_in_group("game")[0]._show_popup("+"+str(money)+" Energy",global_position)
+		get_tree().get_nodes_in_group("game")[0].money += money
 		die()
 	emit_signal("damage_dealt", amount)
 

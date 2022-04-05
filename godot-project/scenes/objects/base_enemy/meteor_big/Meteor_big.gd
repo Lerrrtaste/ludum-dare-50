@@ -12,6 +12,7 @@ onready var area=$Area2D
 func _process(delta):
 	var distance=(1/(target-position).length())*32
 	direction=(direction*100+(target-position).normalized()*distance).normalized()
+	rotation = direction.angle() + deg2rad(45)
 	position=(position+(direction*speed*delta))
 	pass
 

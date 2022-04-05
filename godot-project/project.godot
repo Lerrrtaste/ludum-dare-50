@@ -48,8 +48,10 @@ SoundPlayer="*res://helpers/sound_player/sound_player.tscn"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/integer_resolution_handler/base_width=400
+window/integer_resolution_handler/base_height=320
+window/size/width=800
+window/size/height=620
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

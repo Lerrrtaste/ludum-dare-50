@@ -1,5 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://ui/themes/theme_default.tres" type="Theme" id=1]
+[ext_resource path="res://ui/font_title.tres" type="DynamicFont" id=2]
 [ext_resource path="res://helpers/notifier/popup/notification_panel1.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -11,31 +13,35 @@ margin_top = 20.0
 margin_bottom = 20.0
 
 [node name="Notification" type="PanelContainer"]
-anchor_left = 0.95
-anchor_top = 0.05
-anchor_right = 0.95
-anchor_bottom = 0.05
+anchor_right = 1.0
+margin_left = 542.0
+margin_top = 2.0
+margin_bottom = 86.0
 grow_horizontal = 0
+rect_pivot_offset = Vector2( 126, 5 )
+theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 178.0
-margin_bottom = 52.0
+margin_right = 238.0
+margin_bottom = 64.0
 
 [node name="LblTitle" type="Label" parent="VBox"]
-margin_right = 158.0
-margin_bottom = 14.0
+margin_right = 218.0
+margin_bottom = 20.0
 custom_colors/font_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Titleasd"
 align = 1
 
 [node name="LblMessage" type="Label" parent="VBox"]
-margin_top = 18.0
-margin_right = 158.0
-margin_bottom = 32.0
+margin_top = 24.0
+margin_right = 218.0
+margin_bottom = 44.0
 custom_colors/font_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Please dont cause errors"
 __meta__ = {
 "_edit_use_anchors_": false

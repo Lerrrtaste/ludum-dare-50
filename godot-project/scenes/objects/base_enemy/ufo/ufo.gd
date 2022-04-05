@@ -27,7 +27,7 @@ func _process(delta):
 	#shoot at projectile
 	counter = counter + delta
 	if counter > fire_rate:
-		var ProjectileScene = load("res://scenes/objects/BaseProjectile/mg/mg.tscn")
+		var ProjectileScene = load("res://scenes/objects/BaseProjectile/laser/laser.tscn")
 		var projectile=ProjectileScene.instance()
 		game.add_child(projectile)
 		projectile.position=position

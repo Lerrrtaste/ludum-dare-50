@@ -24,7 +24,7 @@ theme = ExtResource( 5 )
 margin_left = 6.0
 margin_top = 6.0
 margin_right = 71.0
-margin_bottom = 44.0
+margin_bottom = 30.0
 
 [node name="LblResources" type="Label" parent="ContainerStats/VBoxContainer"]
 margin_right = 65.0
@@ -38,6 +38,7 @@ margin_bottom = 24.0
 text = "planet hp text"
 
 [node name="LblWave" type="Label" parent="ContainerStats/VBoxContainer"]
+visible = false
 margin_top = 28.0
 margin_right = 65.0
 margin_bottom = 38.0
@@ -80,7 +81,7 @@ text = "Open Shop"
 [node name="ContainerShop" parent="." instance=ExtResource( 3 )]
 visible = false
 anchor_top = 1.0
-margin_top = -75.0
+margin_top = -87.0
 
 [node name="AudioIntro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

@@ -5,7 +5,7 @@ signal wave_changed
 var ShopItem = preload("res://ui/shop/shop_item/ShopItem.tscn")
 var PopUp = preload("res://helpers/popup/Popup.tscn") 
 
-var money = 1000
+var money = 250
 
 var wave = 1  # aka year
 var wave_progress = 0  #progress 0.0 - 1.0
@@ -146,10 +146,10 @@ func _on_game_over():
 
 func update_ui():
 	lbl_planet_hp.text = "Planet HP: " + str(planet.hp)
-	lbl_resources.text = "Money: " + str(money)
-	lbl_wave.text = "Wave: " + str(wave)
+	lbl_resources.text = "Energy: " + str(money)
+	#lbl_wave.text = "Wave: " + str(wave)
 	lbl_wave_progress.text = "Wave Progress: " + str(floor(wave_progress*100)) + "%"
-	lbl_wave_next.text = "Next Wave in: " + str(floor(current_wave_data["duration"] * (1-wave_progress))) + "s"
+	lbl_wave_next.text = "Wave " + str(wave+1) + " in: " + str(floor(current_wave_data["duration"] * (1-wave_progress))) + "s"
 
 
 #### Callbacks

@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var game = get_tree().get_nodes_in_group("game")[0]
+onready var planet = get_tree().get_nodes_in_group("planet")[0]
 var death_part = preload("res://helpers/particles/DeathParticle.tscn") 
 var tower_data
 var tower_id = -1
@@ -75,8 +76,13 @@ func update_auto_target():
 	for i in in_range:
 		if not i or not i.get_parent().has_method("receive_damage"):
 			continue
-		if abs((i.position-position).angle()) - rotation > 40:
-			continue
+#		print(name)
+#		print("angle ",abs((i.global_position - global_position).angle()))
+#		print("-rotation ", abs((i.global_position - global_position).angle())-rotation)
+#		var angle_to_target = abs((i.global_position - global_position).angle() + deg2rad(90)) - rotation
+#		var angle_to_planet = abs((planet.global_position - global_position).angle()+ deg2rad(90)) - rotation
+#		if angle_to_target + angle_to_planet :
+#			continue
 		if not closest or closest.get_parent().global_position-position > i.get_parent().global_position-position:
 			closest = i
 	

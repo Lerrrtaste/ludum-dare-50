@@ -3,12 +3,6 @@ onready var area=$Area2D
 
 
 var non_sef_collision_counter=1
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 
 func _process(delta):
 	if non_sef_collision_counter != -1:
@@ -25,7 +19,3 @@ func _process(delta):
 func disable_self_collision(seconds:int):
 	non_sef_collision_counter=seconds
 	area.set_collision_mask_bit(2,false) #dont check layer 3 for other objects
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-

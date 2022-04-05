@@ -22,7 +22,7 @@ func start(ptarget, pfired_by_enemy:bool):
 
 func _process(delta):
 	sprite.rotation=deg2rad(90)+direction.angle()
-	speed=speed+(speed*0.1*delta)
+	speed=speed+(speed*0.01)
 	if is_instance_valid(target):
 		direction=(target.global_position-position).normalized()
 	position=(position+(direction*speed*delta))

@@ -9,5 +9,11 @@ script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 4.76837e-07 )
-scale = Vector2( 1.625, 1.75 )
 texture = ExtResource( 2 )
+
+[node name="HpBar" parent="." index="2"]
+margin_left = -15.0
+margin_top = -27.0
+margin_right = 15.0
+margin_bottom = -21.0
+rect_pivot_offset = Vector2( 15, 23 )

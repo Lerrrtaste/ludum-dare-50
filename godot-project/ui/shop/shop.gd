@@ -66,7 +66,7 @@ func _on_Game_wave_changed(wave):
 		if GameData._tower_ids[i] == -1:
 			continue
 		if GameData.get_tower_property(GameData._tower_ids[i], "unlock_year") == wave:
-			Notifier.notify_game("Now Tower available!", GameData.get_tower_property(GameData._tower_ids[i], "name"))
+			Notifier.notify_game("New Tower available!", GameData.get_tower_property(GameData._tower_ids[i], "name"))
 			$AudioUnlock.play()
 			tower_available(GameData._tower_ids[i])
 

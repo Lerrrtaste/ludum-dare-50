@@ -11,9 +11,47 @@ var _WAVE_DATA = {
 			0.0: [Enemies.DEFAULT],
 		},
 	},
-
+#	1: {
+#		"duration": 60,
+#		# note elements of the array must be sorted is ascending order by timestamp
+#		"enemies": [
+#			{
+#				"id": Enemies.UFO,
+#				"count": 12,
+#				"timestamp": 0.1
+#			},
+#			{
+#				"id": Enemies.METEOR,
+#				"count": 4,
+#				"timestamp": 0.2
+#			},
+#			{
+#				"id": Enemies.UFO,
+#				"count": 6,
+#				"timestamp": 0.3
+#			},
+#			{
+#				"id": Enemies.METEORBIG,
+#				"count": 2,
+#				"timestamp": 0.4
+#			},
+#			{
+#				"id": Enemies.UFOBIG,
+#				"count": 12,
+#				"timestamp": 0.5
+#			},
+#			{
+#				"id": Enemies.UFO,
+#				"count": 10,
+#				"timestamp": 0.6
+#			},
+#			{
+#				"id": Enemies.METEOR,
+#				"count": 6,
+#				"timestamp": 0.7
+#			}]},
 	1: {
-		"duration": 60,
+		"duration": 20,
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
@@ -24,43 +62,69 @@ var _WAVE_DATA = {
 			{
 				"id": Enemies.METEOR,
 				"count": 2,
-				"timestamp": 0.5
-			},
-			{
-				"id": Enemies.METEOR,
-				"count": 1,
-				"timestamp": 0.7
-			},
-		],
-	},
-	2: {
-		"duration": 60,
-		# note elements of the array must be sorted is ascending order by timestamp
-		"enemies": [
-			{
-				"id": Enemies.METEOR,
-				"count": 1,
-				"timestamp": 0.1
-			},
-			{
-				"id": Enemies.METEOR,
-				"count": 2,
-				"timestamp": 0.3
+				"timestamp": 0.4
 			},
 			{
 				"id": Enemies.METEOR,
 				"count": 1,
 				"timestamp": 0.6
 			},
+		],
+	},
+	2: {
+		"duration": 20,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.METEOR,
+				"count": 3,
+				"timestamp": 0.1
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 2,
+				"timestamp": 0.2
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 2,
+				"timestamp": 0.4
+			},
 						{
 				"id": Enemies.METEOR,
 				"count": 3,
-				"timestamp": 0.8
+				"timestamp": 0.6
 			},
 		],
 	},
 	3: {
-		"duration": 60,
+		"duration": 30,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.METEOR,
+				"count": 2,
+				"timestamp": 0.1
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 4,
+				"timestamp": 0.2
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 4,
+				"timestamp": 0.4
+			},
+			{
+				"id": Enemies.METEORBIG,
+				"count": 1,
+				"timestamp": 0.6
+			},
+		]
+	},
+	4: {
+		"duration": 20,
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
@@ -69,45 +133,19 @@ var _WAVE_DATA = {
 				"timestamp": 0.1
 			},
 			{
-				"id": Enemies.UFO,
-				"count": 1,
+				"id": Enemies.METEOR,
+				"count": 7,
 				"timestamp": 0.3
 			},
 			{
 				"id": Enemies.METEORBIG,
-				"count": 1,
-				"timestamp": 0.6
-			},
-			{
-				"id": Enemies.UFO,
-				"count": 3,
-				"timestamp": 0.8
-			},
-		]
-	},
-	4: {
-		"duration": 60,
-		# note elements of the array must be sorted is ascending order by timestamp
-		"enemies": [
-			{
-				"id": Enemies.METEORBIG,
-				"count": 5,
-				"timestamp": 0.1
-			},
-			{
-				"id": Enemies.UFO,
-				"count": 4,
-				"timestamp": 0.3
+				"count": 2,
+				"timestamp": 0.5
 			},
 			{
 				"id": Enemies.METEOR,
-				"count": 10,
+				"count": 4,
 				"timestamp": 0.6
-			},
-			{
-				"id": Enemies.UFOBIG,
-				"count": 3,
-				"timestamp": 0.8
 			},
 		]
 	},
@@ -116,56 +154,156 @@ var _WAVE_DATA = {
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
-				"id": Enemies.METEORBIG,
+				"id": Enemies.METEOR,
 				"count": 5,
 				"timestamp": 0.1
 			},
 			{
 				"id": Enemies.UFO,
-				"count": 10,
-				"timestamp": 0.3
+				"count": 2,
+				"timestamp": 0.2
 			},
 			{
-				"id": Enemies.METEORBIG,
+				"id": Enemies.UFO,
 				"count": 4,
-				"timestamp": 0.6
+				"timestamp": 0.5
 			},
 			{
-				"id": Enemies.UFOBIG,
+				"id": Enemies.METEOR,
 				"count": 6,
-				"timestamp": 0.8
+				"timestamp": 0.6
 			},
 		]
 	},
 	6: {
-		"duration": 10,
+		"duration": 20,
 		# note elements of the array must be sorted is ascending order by timestamp
 		"enemies": [
 			{
-				"id": Enemies.METEORBIG,
-				"count": 15,
+				"id": Enemies.METEOR,
+				"count": 12,
 				"timestamp": 0.1
 			},
 			{
-				"id": Enemies.UFOBIG,
-				"count": 16,
-				"timestamp": 0.8
+				"id": Enemies.UFO,
+				"count": 4,
+				"timestamp": 0.2
 			},
 			{
 				"id": Enemies.UFO,
-				"count": 25,
+				"count": 6,
+				"timestamp": 0.3
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 3,
+				"timestamp": 0.4
+			},
+			{
+				"id": Enemies.UFO,
+				"count": 6,
+				"timestamp": 0.5
+			}]
+		},
+		7: {
+		"duration": 30,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.UFO,
+				"count": 10,
+				"timestamp": 0.1
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 6,
+				"timestamp": 0.2
+			},
+			{
+				"id": Enemies.UFO,
+				"count": 3,
+				"timestamp": 0.3
+			},
+			{
+				"id": Enemies.UFOBIG,
+				"count": 1,
+				"timestamp": 0.5
+			},
+			{
+				"id": Enemies.UFO,
+				"count": 5,
+				"timestamp": 0.7
+			}]
+		},
+		8: {
+		"duration": 30,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.UFO,
+				"count": 12,
+				"timestamp": 0.1
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 6,
+				"timestamp": 0.2
+			},
+			{
+				"id": Enemies.UFOBIG,
+				"count": 3,
 				"timestamp": 0.3
 			},
 			{
 				"id": Enemies.METEORBIG,
+				"count": 1,
+				"timestamp": 0.5
+			},
+			{
+				"id": Enemies.UFO,
+				"count": 6,
+				"timestamp": 0.6
+			}]
+		},
+		9: {
+		"duration": 60,
+		# note elements of the array must be sorted is ascending order by timestamp
+		"enemies": [
+			{
+				"id": Enemies.UFO,
+				"count": 12,
+				"timestamp": 0.1
+			},
+			{
+				"id": Enemies.METEOR,
+				"count": 4,
+				"timestamp": 0.2
+			},
+			{
+				"id": Enemies.UFO,
+				"count": 6,
+				"timestamp": 0.3
+			},
+			{
+				"id": Enemies.METEORBIG,
+				"count": 2,
+				"timestamp": 0.4
+			},
+			{
+				"id": Enemies.UFOBIG,
+				"count": 12,
+				"timestamp": 0.5
+			},
+			{
+				"id": Enemies.UFO,
 				"count": 10,
 				"timestamp": 0.6
 			},
 			{
-				"id": Enemies.UFOBIG,
-				"count": 16,
-				"timestamp": 0.8
-			},
-		]
-	},
-}
+				"id": Enemies.METEOR,
+				"count": 6,
+				"timestamp": 0.7
+			}]
+		}
+	}
+

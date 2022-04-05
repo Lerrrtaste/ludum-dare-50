@@ -12,6 +12,7 @@ func _ready():
 	pass
 
 func receive_damage(amount):
+	amount = amount *.5
 	SoundPlayer.play("Planet Damaged.wav")
 	hp=hp-amount;
 	$AnimationPlayer.stop(true)

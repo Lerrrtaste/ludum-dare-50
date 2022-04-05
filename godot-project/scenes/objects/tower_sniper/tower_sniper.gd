@@ -17,8 +17,8 @@ func shoot():
 #	direction += (target.speed*target.direction.normalized())*2 # add expected movement until impact
 #	inst.start(direction, false)
 #	$SprTarget.global_position = global_position+direction
-	line_to = (target.position - global_position).angle() - rotation + deg2rad(90)
-	line_to = target.global_position - global_position# (Vector2(1,0)*line_to).normalized() * position.distance_to(target.position)
+	#line_to = (target.position - global_position).angle() - rotation - deg2rad(90)
+	line_to = target.global_position# - global_position# (Vector2(1,0)*line_to).normalized() * position.distance_to(target.position)
 	$Tween.interpolate_property(self, "line_a", 1.0, 0.0, 0.4, Tween.TRANS_QUAD,Tween.EASE_OUT)
 	$Tween.start()
 	target.receive_damage(GameData.get_tower_property(TOWER_ID,"damage"))
@@ -30,5 +30,5 @@ func _process(delta):
 
 func _draw():
 	if line_to:
-		draw_line(Vector2(),line_to,ColorN("white",line_a), 1)
+		draw_line(Vector2(),line_to-global_position,ColorN("white",line_a), 1)
 

@@ -16,7 +16,7 @@ var _PROJECTILE_DATA = {
 			"speed":100
 	},
 	Projectiles.MG: {
-		"damage":10,
+		"damage":5,
 		"speed":100,
 		"scene_path": "res://scenes/objects/BaseProjectile/mg/mg.tscn",
 	},
@@ -27,22 +27,22 @@ var _PROJECTILE_DATA = {
 	},
 	Projectiles.FLAK: {
 		"damage":50,
-		"speed":20,
+		"speed":50,
 		"scene_path": "res://scenes/objects/BaseProjectile/flak/flak.tscn",
 	},
 	Projectiles.MISSILE: {
 		"damage":40,
-		"speed":5,
+		"speed":40,
 		"scene_path": "res://scenes/objects/BaseProjectile/missile/missile.tscn",
 	},
 	Projectiles.LASER: {
-		"damage":200,
-		"speed":200,
+		"damage":25,
+		"speed":150,
 		"scene_path": "res://scenes/objects/BaseProjectile/laser/laser.tscn",
 	},
 	Projectiles.NUKE: {
-		"damage":200,
-		"speed":50,
+		"damage":50,
+		"speed":40,
 		"scene_path": "res://scenes/objects/BaseProjectile/nuke/nuke.tscn",
 	},
 }

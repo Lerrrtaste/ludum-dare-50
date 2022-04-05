@@ -26,16 +26,16 @@ var _ENEMY_DATA = {
 	},
 	Enemies.METEOR: {
 		"damage_type": DamageType.IMPACT,
-		"damage_amount": 20,
-		"speed": 20,
-		"hp": 30,
+		"damage_amount": 100,
+		"speed": 25,
+		"hp": 100,
 		"scene_path": "res://scenes/objects/base_enemy/meteor/Meteor.tscn",
 	},
 	Enemies.METEORBIG: {
 		"damage_type": DamageType.IMPACT,
-		"damage_amount": 40,
-		"speed": 50,
-		"hp": 30,
+		"damage_amount": 200,
+		"speed": 15,
+		"hp": 250,
 		"scene_path": "res://scenes/objects/base_enemy/meteor_big/Meteor_big.tscn",
 	},
 	Enemies.UFO: {
