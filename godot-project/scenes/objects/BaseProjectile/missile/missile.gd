@@ -7,7 +7,7 @@ var id_in_dict=GameData._projectile_ids.MISSILE
 
 
 # Called when the node enters the scene tree for the first time.
-
+var sspeed
 func start(ptarget, pfired_by_enemy:bool):
 	target=ptarget
 	fired_by_enemy=pfired_by_enemy
@@ -15,13 +15,14 @@ func start(ptarget, pfired_by_enemy:bool):
 	set_process(true)
 	var randint=(randi()%2)+1
 	SoundPlayer.play("Rocket Launched %s.wav"%randint)
+	sspeed=speed
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
 func _process(delta):
 	sprite.rotation=deg2rad(90)+direction.angle()
-	speed=speed+speed*delta
+	speed=speed+(speed*0.1*delta)
 	if is_instance_valid(target):
 		direction=(target.global_position-position).normalized()
 	position=(position+(direction*speed*delta))

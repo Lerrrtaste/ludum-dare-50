@@ -35,6 +35,7 @@ animations = [ {
 } ]
 
 [node name="TowerMg" instance=ExtResource( 1 )]
+modulate = Color( 0.631373, 0, 0, 1 )
 script = ExtResource( 2 )
 
 [node name="SprTower" type="AnimatedSprite" parent="." index="6"]
@@ -46,3 +47,6 @@ offset = Vector2( 0, -8 )
 frames = SubResource( 2 )
 animation = "idle"
 offset = Vector2( 0, -8 )
+
+[node name="AudioShoot" parent="." index="11"]
+pitch_scale = 0.34
