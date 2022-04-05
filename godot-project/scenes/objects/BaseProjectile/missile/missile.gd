@@ -20,6 +20,7 @@ func start(ptarget, pfired_by_enemy:bool):
 #	pass
 
 func _process(delta):
+	sprite.rotation=deg2rad(90)+direction.angle()
 	speed=speed+speed*delta
 	if is_instance_valid(target):
 		direction=(target.global_position-position).normalized()

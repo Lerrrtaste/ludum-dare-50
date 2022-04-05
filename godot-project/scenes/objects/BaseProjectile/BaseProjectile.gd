@@ -18,6 +18,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	sprite.rotation=deg2rad(90)+direction.angle()
 	position=(position+(direction*speed*delta))
 	#autodestroy after 10 sec
 	counter = counter+delta
