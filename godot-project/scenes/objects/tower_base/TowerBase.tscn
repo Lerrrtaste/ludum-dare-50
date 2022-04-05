@@ -91,6 +91,7 @@ animation = "idle"
 offset = Vector2( 0, -8 )
 
 [node name="HpBar" parent="." instance=ExtResource( 3 )]
+visible = false
 modulate = Color( 1, 1, 1, 0.556863 )
 margin_left = -10.0
 margin_top = -27.0
