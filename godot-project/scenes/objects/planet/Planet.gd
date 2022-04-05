@@ -14,7 +14,10 @@ func _ready():
 func receive_damage(amount):
 	SoundPlayer.play("Planet Damaged.wav")
 	hp=hp-amount;
+	$AnimationPlayer.stop(true)
 	$AnimationPlayer.play("damage")
+	get_parent().add_stress(.2)
+	get_tree().get_nodes_in_group("game")[0]._show_popup("Planet -" + str(amount),global_position)
 	# die
 	if hp <= 0:
 		hp=0

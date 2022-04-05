@@ -53,6 +53,7 @@ func load_tower(p_tower_id):
 func receive_damage(damage:int):
 	hp -= damage
 	$AudioDamage.play()
+	$AnimationPlayer.stop(true)
 	$AnimationPlayer.play("damage")
 	$HpBar.visible = true
 	$HpBar.value = (float(hp)/float(tower_data.hp))*100.0

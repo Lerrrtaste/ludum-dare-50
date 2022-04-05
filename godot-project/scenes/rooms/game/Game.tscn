@@ -11,6 +11,9 @@
 
 [node name="Game" type="CanvasLayer" groups=["game"]]
 script = ExtResource( 1 )
+max_offset = 25.0
+max_roll = 12.0
+shakeReduction = 2.0
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
 

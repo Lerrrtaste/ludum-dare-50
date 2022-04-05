@@ -3,6 +3,7 @@ extends CanvasLayer
 signal wave_changed
 
 var ShopItem = preload("res://ui/shop/shop_item/ShopItem.tscn")
+var PopUp = preload("res://helpers/popup/Popup.tscn") 
 
 var money = 1000
 
@@ -33,10 +34,13 @@ func _ready():
 func _process(delta):
 	progress_wave(delta)
 	update_ui()
+	_process_shake(transform.origin, 0.0, delta)
+	
 
 
 #### waves
 func start_wave(wave_number):
+
 	emit_signal("wave_changed", wave) # emits a signal that the first wave/age/lavel started
 	if wave_number in GameData._wave_data:
 		current_wave_data = GameData.get_wave_dict(wave_number)
@@ -59,7 +63,12 @@ func progress_wave(delta):
 		var timestamp=events[0]["timestamp"]
 		if timestamp<wave_progress:
 			perform_spawn(events.pop_front())
-	
+
+func _show_popup(text:String,from:Vector2)->void:
+	var inst = PopUp.instance()
+	add_child(inst)
+	inst.start(text,from,from)
+
 	
 func perform_spawn(event):
 	var enemy_id=event["id"]
@@ -70,7 +79,6 @@ func perform_spawn(event):
 	var enemy_speed= GameData.get_enemy_property(enemy_id, "speed")
 	var enemy_fire_rate= GameData.get_enemy_property(enemy_id, "fire_rate")
 	var EnemyScene = load(enemy_scene_path)
-
 	
 	for i in range(enemy_count) :
 		var enemy=EnemyScene.instance()
@@ -162,3 +170,48 @@ func _on_ContainerShop_hide():
 
 func _on_AudioIntro_finished():
 	$AudioLoop.play()
+
+
+##### screenshake
+
+
+
+export var max_offset : float = 5.0
+export var max_roll : float = 5.0
+export var shakeReduction : float = 2.5
+
+var stress : float = 0.0
+var shake : float = 0.0
+
+
+func _process_shake(center, angle, delta) -> void:
+	shake = stress * stress
+
+	rotation_degrees = angle + (max_roll * shake *  _get_noise(randi(), delta))
+	
+	var offset = Vector2()
+	offset.x = (max_offset * shake * _get_noise(randi(), delta + 1.0))
+	offset.y = (max_offset * shake * _get_noise(randi(), delta + 2.0))
+	
+	offset.x = center.x + offset.x
+	offset.y = center.y + offset.y
+		
+	stress -= (shakeReduction / 100.0)
+	
+	stress = clamp(stress, 0.0, 1.0)
+	
+	
+func _get_noise(noise_seed, time) -> float:
+	var n = OpenSimplexNoise.new()
+	
+	n.seed = noise_seed
+	n.octaves = 4
+	n.period = 20.0
+	n.persistence = 0.8
+	
+	return n.get_noise_1d(time)
+	
+	
+func add_stress(amount : float) -> void:
+	stress += amount
+	stress = clamp(stress, 0.0, 1.0)

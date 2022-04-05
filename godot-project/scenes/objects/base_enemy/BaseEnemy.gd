@@ -44,13 +44,17 @@ func receive_damage(amount):
 	hp = hp - amount
 	$HpBar.value = (float(hp)/float(hp_max))
 	print("hp",hp," hpmax",hp_max, " value", $HpBar.value)
+	$AnimationPlayer.stop(true)
 	$AnimationPlayer.play("damage")
+	get_tree().get_nodes_in_group("game")[0]._show_popup("-"+str(amount),global_position)
 	# die
 	if hp <= 0:
 		var inst = death_part.instance()
 		get_parent().add_child(inst)
 		inst.global_position = global_position
 		hp=0
+		get_tree().get_nodes_in_group("game")[0]._show_popup("+"+str(25)+" Energy",global_position)
+		get_tree().get_nodes_in_group("game")[0].money += 25
 		die()
 	emit_signal("damage_dealt", amount)
 

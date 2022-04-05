@@ -30,7 +30,8 @@ func _process(delta):
 func fetch_data_from_dic(id_in_dict):
 	damage=GameData.get_projectile_property(id_in_dict, "damage")
 	speed=GameData.get_projectile_property(id_in_dict, "speed")
-	if fired_by_enemy :
+	
+	if fired_by_enemy:
 		area.set_collision_mask_bit(2,false)
 		area.set_collision_mask_bit(0,true)
 		area.set_collision_mask_bit(1,true)

@@ -36,4 +36,5 @@ func _unhandled_input(event):
 			inst.position = planet.get_outer_pos(event.position)
 			inst.rotation_degrees = rad2deg((event.position - planet.position).angle())+90
 			planet.add_child(inst)
+			get_tree().get_nodes_in_group("game")[0]._show_popup("-"+str(GameData.get_tower_property(tower_id, "cost"))+" Energy",global_position)
 			emit_signal("tower_preview_placed")

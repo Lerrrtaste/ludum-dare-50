@@ -40,6 +40,7 @@ func _on_BtnBuy_pressed():
 			game.money -= GameData.get_tower_property(tower_id, "unlock_cost")
 			is_unlocked = true
 			btn_buy.disabled = false
+			#get_tree().get_nodes_in_group("game")[0]._show_popup("-" + str(GameData.get_tower_property(tower_id, "unlock_cost")) + " Energy",rect_position)
 			emit_signal("tower_unlocked", tower_id)
 			visible = false
 			queue_free()
